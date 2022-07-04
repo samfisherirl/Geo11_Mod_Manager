@@ -4,10 +4,20 @@
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1
 
+if !(A_IsUnicode=1 and A_PtrSize=4)
+{
+	SplitPath, A_AhkPath, , dir
+	Run, %dir%\AutoHotkeyU32.exe "%A_ScriptFullPath%"		;必须加引号，否则文件名中含空格的文件无法识别
+	ExitApp
+}
+hSkinH := DllCall("LoadLibrary", "Str", "SkinHu.dll")
+DllCall("SkinHu\SkinH_AttachEx", "Str", A_ScriptDir "\skins\0021.she")
 ;If (Gameexe !="")
 ;    SelectedGame := Gameexe
 ;Else
 ;    SelectedGame := "Selected Game"
+Gui, Add, Picture, x-8 y0 w610 h385 , C:\Users\Sam\Downloads\istockphoto-1143850412-170667a.jpg
+
 Gui Font, s9, Segoe UI
 Gui Add, DropDownList, vVersion x288 y112 w84, x64 game||x32 game
 Gui Add, Text, x192 y16 w169 h41, Select Game Location,`nSelect x64 or x32

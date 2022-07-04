@@ -19,7 +19,7 @@
 ;	sbs_reversed
 ;	interlaced
 ;	interlaced_reversed
-direct_mode = sbs
+direct_mode = nvidia_dx11
 
 matrix_analyzer = 1
 auto_detect_depth_buffer = 1
