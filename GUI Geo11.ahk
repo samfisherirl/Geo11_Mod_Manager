@@ -16,7 +16,8 @@ DllCall("SkinHu\SkinH_AttachEx", "Str", A_ScriptDir "\skins\0021.she")
 ;    SelectedGame := Gameexe
 ;Else
 ;    SelectedGame := "Selected Game"
-Gui, Add, Picture, x-8 y0 w610 h385 , C:\Users\Sam\Downloads\istockphoto-1143850412-170667a.jpg
+Imagine := A_ScriptDir "\ico\bg.jpg"
+Gui, Add, Picture, x-8 y0 w610 h385 , % Imagine
 
 Gui Font, s9, Segoe UI
 Gui Add, DropDownList, vVersion x288 y112 w84, x64 game||x32 game
@@ -24,7 +25,7 @@ Gui Add, Text, x192 y16 w169 h41, Select Game Location,`nSelect x64 or x32
 Gui Add, Button, gGenerate x288 y216 w84 h23, Generate
 Gui Add, Button, gBrowse x184 y112 w85 h23, Browse
 Gui Add, Text, x176 y168 w120 h23, %Gamename%
-Gui Add, Text, x8 y8 w154 h278, This app will take the Geo11 files such as dxd11.dll and rename them to "dxd11.geo". `n`nIt creates a desktop shortcut, when clicked, it will rename the game's original "dxd11.dll" files to ".org" and rename the ".geo" files to ".dll". Creating a VR specific launcher/shortcut.`n`nOn game close, the files will return to original name
+Gui Add, Text, x8 y8 w154 h278, This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder. `n`nIt creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to "/originaldx" and load geo11 dxd11 files. Creating a VR specific launcher/shortcut.`n`nOn game close, the files will return to original name
 ;Gui Add, Edit, x184 y216 w85 h23, %SelectedGame%
 Gui Show, w390 h295, Mod Manager for Geo11 
 Return
@@ -57,25 +58,28 @@ Generate:
         DllLocal := A_ScriptDir 64or32
         ChangeNames := DllLocal 
 
-        arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"]
+        ;arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"]
         arraydll := ["d3d11.dll", "d3dcompiler_47.dll", "d3dx.ini", "d3dxdm.ini", "nvapi64.dll"]
+            FileCreateDir, %Gamepath%\geo
 
         For index, value in arraydll
         { 
-            val := % value 
-            geo := % arraygeo[index] 
-            FileCopy, %DllLocal%\%val%, %DllLocal%\geo\, 1
-            sleep, 15
-            FileMove, %DllLocal%\geo\%val%, %DllLocal%\geo\%geo%, 1
-            sleep, 10 
+            ;val := % value 
+            ;geo := % arraygeo[index] 
+            ;FileCopy, %DllLocal%\%val%, %DllLocal%\geo\, 1
+            ;sleep, 15
+            ;FileMove, %DllLocal%\geo\%val%, %DllLocal%\geo\%geo%, 1
+            ;sleep, 10 
+            dll := % arraydll[index] 
+            FileCopy, %DllLocal%\%dll%, %Gamepath%\geo\, 1
         } 
-        For index, value in arraygeo
-        { 
-            geo := % arraygeo[index] 
-            FileCopy, %DllLocal%\geo\%geo%, %Gamepath%, 1
-        }
-        FileCopy, %A_ScriptDir%\VRLauncher.exe, %Gamepath%\VRLauncher.exe, 1
-        FileCopyDir, %DllLocal%\ShaderFixes, %Gamepath%\ShaderFixes, 1
+        ;For index, value in arraygeo
+        ;{ 
+        ;    geo := % arraygeo[index] 
+        ;    FileCopy, %DllLocal%\geo\%geo%, %Gamepath%, 1
+        ;}
+        ;FileCopy, %A_ScriptDir%\VRLauncher.exe, %Gamepath%\VRLauncher.exe, 1
+        ;FileCopyDir, %DllLocal%\ShaderFixes, %Gamepath%\ShaderFixes, 1
 
         Logfile := Gamepath "\Gamename.txt"
         Random, rand, 1, 12
@@ -83,7 +87,7 @@ Generate:
         FileDelete, %Logfile% ; 
         FileAppend, %Selectgame%, %Logfile%
         ShortcutMaker := A_Desktop "\" Gamenameonly " VR.lnk"
-        AHKLocal := Gamepath "\VRLauncher.exe" 
+        AHKLocal := Gamepath "\leaveingamedir.exe" 
         FileCreateShortcut, %AHKLocal%, %ShortcutMaker%, %Gamepath%,,,%Localicon%
     }
 
