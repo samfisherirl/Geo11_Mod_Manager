@@ -1,7 +1,7 @@
 # Geo11_Shortcut_Maker
 https://streamable.com/77st03
 
-![image](https://user-images.githubusercontent.com/98753696/178038000-27ae5772-c042-43fb-a351-d5db67bf1907.png)
+![image](https://user-images.githubusercontent.com/98753696/178040820-3d32a28b-e993-4414-9c3b-7dec27c7e585.png)
 
 Geo11_Shortcut_Maker -
 This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder in the game's directory. 
