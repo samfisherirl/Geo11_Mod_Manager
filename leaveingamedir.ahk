@@ -2,15 +2,23 @@
 #NoEnv
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1
-
 Logfile := A_ScriptDir "\Gamename.txt"
-FileRead, OutputVar, %Logfile%
+OrigDir := A_ScriptDir "\OriginalDx"
+FileCreateDir, %OrigDir%
+FileReadLine, OutputVar, %Logfile%, 1
+FileReadLine, Helix, %Logfile%, 2
+SplitPath, HelixVar,Helixexe,Helixpath,
 SplitPath, OutputVar, Gameexe, Gamepath, Gameextenstion, Gamenameonly
 arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"]
 arrayorig := ["d3d11.orig", "d3dcompiler_47.orig", "d3dx.orig", "d3dxdm.orig", "nvapi64.orig"]
 arraydll := ["d3d11.dll", "d3dcompiler_47.dll", "d3dx.ini", "d3dxdm.ini", "nvapi64.dll"]
 BeforeLaunch(arraygeo, arrayorig, arraydll) 
 sleep, 1000 
+If (Helix != "")
+{
+Run %Helix%,%Helixpath%
+Sleep, 1000
+}
 Run %Gameexe%, A_ScriptDir
 Loop, 10
 {
@@ -34,7 +42,8 @@ if (Exister="1")
                 {
                         WinWaitClose, ahk_exe Gameexe
                         AfterLaunch(arraygeo, arrayorig, arraydll)
-                        exitapp
+                        Exitapp
+                        Break
                 }
                 else
                         Sleep, 1000
@@ -69,13 +78,13 @@ return
 
 BeforeLaunch(arraygeo, arrayorig, arraydll)
 {
-run, pregame_move.bat
-sleep, 1000
+        run, pregame_move.bat
+        sleep, 1000
 }
 
 AfterLaunch(arraygeo, arrayorig, arraydll)
 {
 
-run, postgame_move.bat
-sleep, 1000
+        run, postgame_move.bat
+        sleep, 1000
 }
