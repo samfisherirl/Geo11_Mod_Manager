@@ -1,7 +1,7 @@
 # Geo11_Shortcut_Maker
 https://streamable.com/77st03
 
-Geo11_Shortcut_Maker - this is designed as a stand in for 3dfix, right now geo11 requires manual loading and unloading for 2d games.  I saw an opportunity to help the community in a small way, and maybe bolster the geo11 team's efforts on this great release. 
+Geo11_Shortcut_Maker - this is designed as support for 3dfix, right now geo11 requires manual loading and unloading for 2d games.  I saw an opportunity to help the community in a small way, and maybe bolster the geo11 team's efforts on this great release. 
 
 I am not affiliated with the Geo11 team, just a fan. 
 
