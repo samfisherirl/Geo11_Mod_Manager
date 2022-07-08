@@ -11,10 +11,10 @@ SetBatchLines -1
 Logdir := A_AppDataCommon "\GameslistGeo11"
 FileCreateDir, %Logdir%
 LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
-        GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
-        FileReadLine, Fuk, GamesUpdate, 1
+GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
+FileReadLine, Fuk, GamesUpdate, 0
 
-        SelectedGame := Fuk
+SelectedGame := Fuk
 ColumnNr := [1]
 delimiter := ","
 Loop, read, %LogGames%
@@ -29,7 +29,7 @@ Loop, read, %LogGames%
         else
             Stored := Cell[2] "|" Stored
     }
-}  
+} 
 global GameError := 0
 Imagine := A_ScriptDir "\ico\bg.jpg"
 Gui, Add, Picture, x-8 y0 w610 h385 , % Imagine
@@ -44,13 +44,13 @@ Gui Add, Button, gUninstall x288 y333 w84 h23, Uninstall
 Gui Add, ListBox, vStoredforDisplay x176 y248 w102 h134, %Stored%
 Gui Add, Button, gConfiger x288 y296 w84 h23, Config ini
 Gui Add, Text, x288 y256 w101 h23, Current Installs 
-        Gui Add, edit, x184 y144 w90 h21 vSelectedGameExe, % SelectedGame 
+Gui Add, edit, x184 y144 w90 h21, % SelectedGame 
 Gui Add, Text, x202 y109 w70 h23, Helix Vision?
 Gui Add, CheckBox, x176 y192 w225 h20, Has Katanga/Helix Vision been located?
 Gui Add, Text, x8 y8 w154 h278, This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder in the game's directory. `n`nIt creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to "/originaldx" and load geo11 dxd11 files. Creating a VR specific launcher/shortcut.`n`nOn game close, the files will return to original locations.`n`nThis is a 3rd party mod loader, I am not affiliated with the Geo11 team. Just a fan. 
-        ;Gui Add, Edit, x184 y216 w85 h23, %SelectedGame% 
-        Gui Show, w418 h394, Mod Manager for Geo11 
-        Return
+;Gui Add, Edit, x184 y216 w85 h23, %SelectedGame% 
+Gui Show, w418 h394, Mod Manager for Geo11 
+Return
 
 Browse:
     {
@@ -85,7 +85,7 @@ Browse:
                     Else
                     {
                         GameError := 0
-                                    FileAppend, %Gameexe%, %GamesUpdate%
+                        FileAppend, %Gameexe%, %GamesUpdate%
 
                     }
                 }
