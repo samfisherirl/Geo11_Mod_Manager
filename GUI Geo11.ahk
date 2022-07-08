@@ -11,8 +11,10 @@ SetBatchLines -1
 Logdir := A_AppDataCommon "\GameslistGeo11"
 FileCreateDir, %Logdir%
 LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
+        GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
+        FileReadLine, Fuk, GamesUpdate, 1
 
-GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
+        SelectedGame := Fuk
 ColumnNr := [1]
 delimiter := ","
 Loop, read, %LogGames%
@@ -27,25 +29,28 @@ Loop, read, %LogGames%
         else
             Stored := Cell[2] "|" Stored
     }
-} 
+}  
 global GameError := 0
 Imagine := A_ScriptDir "\ico\bg.jpg"
 Gui, Add, Picture, x-8 y0 w610 h385 , % Imagine
 
 Gui Font, s9, Segoe UI
 Gui Add, DropDownList, vVersion x288 y72 w84, x64 game||x32 game
-Gui Add, Text, x192 y16 w189 h61, Select Game Location and version,`n'Generate' will push the Geo11 files and a Geo11 desktop shortcut.
-Gui Add, Button, gGenerate x288 y112 w84 h23, Generate
-Gui Add, Button, gBrowse x184 y72 w85 h23, Browse
-Gui Add, Button, gUninstall x288 y248 w84 h23, Uninstall
-Gui Add, ListBox, vStoredforDisplay x176 y176 w102 h95, %Stored%
-Gui Add, Button, gConfiger x288 y192 w84 h23, Config Game
-
-Gui Add, Text, x179 y143 w101 h23, Current Installs 
-Gui Add, Text, x8 y8 w154 h278, This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder in the game's directory. `n`nIt creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to "/originaldx" and load geo11 dxd11 files. Creating a VR specific launcher/shortcut.`n`nOn game close, the files will return to original locations. 
-;Gui Add, Edit, x184 y216 w85 h23, %SelectedGame%
-Gui Show, w390 h295, Mod Manager for Geo11 
-Return
+Gui Add, Text, x180 y10 w189 h61, Select Game Location and version,`n'Generate' will push the Geo11 files and a Geo11 desktop shortcut.
+Gui Add, Button, gGenerate x288 y144 w87 h23, Generate
+Gui Add, DropDownList, x288 y108 w84, Yes|| No
+Gui Add, Button, gBrowse x184 y70 w90 h25, Browse
+Gui Add, Button, gUninstall x288 y333 w84 h23, Uninstall
+Gui Add, ListBox, vStoredforDisplay x176 y248 w102 h134, %Stored%
+Gui Add, Button, gConfiger x288 y296 w84 h23, Config ini
+Gui Add, Text, x288 y256 w101 h23, Current Installs 
+        Gui Add, edit, x184 y144 w90 h21 vSelectedGameExe, % SelectedGame 
+Gui Add, Text, x202 y109 w70 h23, Helix Vision?
+Gui Add, CheckBox, x176 y192 w225 h20, Has Katanga/Helix Vision been located?
+Gui Add, Text, x8 y8 w154 h278, This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder in the game's directory. `n`nIt creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to "/originaldx" and load geo11 dxd11 files. Creating a VR specific launcher/shortcut.`n`nOn game close, the files will return to original locations.`n`nThis is a 3rd party mod loader, I am not affiliated with the Geo11 team. Just a fan. 
+        ;Gui Add, Edit, x184 y216 w85 h23, %SelectedGame% 
+        Gui Show, w418 h394, Mod Manager for Geo11 
+        Return
 
 Browse:
     {
@@ -54,6 +59,7 @@ Browse:
             MsgBox, You didn't select anything.
         else
         {
+
             SplitPath, Selectgame, Gameexe, Gamepath, Gameextenstion, Gamenameonly
 
             if !FileExist(LogGames)
@@ -77,12 +83,18 @@ Browse:
                         break
                     }
                     Else
+                    {
                         GameError := 0
+                                    FileAppend, %Gameexe%, %GamesUpdate%
+
+                    }
                 }
                 ;Gui Add, ComboBox, vcbx w200 vVersChoice, x32||x64 
             }
         } 
+        Reload
         Nextup: ;Gui Add, ComboBox, vcbx w200 vVersChoice, x32||x64 
+
         }
         return
 
