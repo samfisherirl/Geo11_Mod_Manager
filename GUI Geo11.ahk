@@ -89,7 +89,6 @@ Gui Show, w418 h394, Mod Manager for Geo11
 Return
 
 Browse:
-Browse()
     {
         FileSelectFile, Selectgame, 32, , Select a game, Application (*.exe)
         if (Selectgame = "")

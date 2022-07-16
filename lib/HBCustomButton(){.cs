@@ -1,0 +1,22 @@
+HBCustomButton(){
+	local MyButtonDesign1 := {}
+	MyButtonDesign1.All := {}
+	MyButtonDesign1.Default := {}
+	MyButtonDesign1.Hover := {}
+	MyButtonDesign1.Pressed := {}
+	;********************************
+	;All
+	MyButtonDesign1.All.W := 200 , MyButtonDesign1.All.H := 65 , MyButtonDesign1.All.Text := " Button " , MyButtonDesign1.All.BackgroundColor := "0xFF22262A"
+	;********************************
+	;Default
+	MyButtonDesign1.Default.W := 200 , MyButtonDesign1.Default.H := 65 , MyButtonDesign1.Default.Text := "Button" , MyButtonDesign1.Default.Font := "Arial" , MyButtonDesign1.Default.FontOptions := " Bold Center vCenter " , MyButtonDesign1.Default.FontSize := "12" , MyButtonDesign1.Default.H := "0x0002112F" , MyButtonDesign1.Default.TextBottomColor2 := "0x0002112F" , MyButtonDesign1.Default.TextTopColor1 := "0xFFFFFFFF" , MyButtonDesign1.Default.TextTopColor2 := "0xFFFFFFFF" , MyButtonDesign1.Default.TextOffsetX := "0" , MyButtonDesign1.Default.TextOffsetY := "0" , MyButtonDesign1.Default.TextOffsetW := "0" , MyButtonDesign1.Default.TextOffsetH := "0" , MyButtonDesign1.Default.BackgroundColor := "0xFF22262A" , MyButtonDesign1.Default.ButtonOuterBorderColor := "0xFF161B1F" , MyButtonDesign1.Default.ButtonCenterBorderColor := "0xFF262B2F" , MyButtonDesign1.Default.ButtonInnerBorderColor1 := "0xFF3F444A" , MyButtonDesign1.Default.ButtonInnerBorderColor2 := "0xFF24292D" , MyButtonDesign1.Default.ButtonMainColor1 := "0xFF272C32" , MyButtonDesign1.Default.ButtonMainColor2 := "0xFF272C32" , MyButtonDesign1.Default.ButtonAddGlossy := "1" , MyButtonDesign1.Default.GlossTopColor := "0x11FFFFFF" , MyButtonDesign1.Default.GlossTopAccentColor := "05FFFFFF" , MyButtonDesign1.Default.GlossBottomColor := "33000000"
+	;********************************
+	;Hover
+	MyButtonDesign1.Hover.W := 200 , MyButtonDesign1.Hover.H := 65 , MyButtonDesign1.Hover.Text := "Button" , MyButtonDesign1.Hover.Font := "Arial" , MyButtonDesign1.Hover.FontOptions := " Bold Center vCenter " , MyButtonDesign1.Hover.FontSize := "12" , MyButtonDesign1.Hover.H := "0x0002112F" , MyButtonDesign1.Hover.TextBottomColor2 := "0x0002112F" , MyButtonDesign1.Hover.TextTopColor1 := "0xFFFFFFFF" , MyButtonDesign1.Hover.TextTopColor2 := "0xFFFFFFFF" , MyButtonDesign1.Hover.TextOffsetX := "0" , MyButtonDesign1.Hover.TextOffsetY := "0" , MyButtonDesign1.Hover.TextOffsetW := "0" , MyButtonDesign1.Hover.TextOffsetH := "0" , MyButtonDesign1.Hover.BackgroundColor := "0xFF22262A" , MyButtonDesign1.Hover.ButtonOuterBorderColor := "0xFF161B1F" , MyButtonDesign1.Hover.ButtonCenterBorderColor := "0xFF262B2F" , MyButtonDesign1.Hover.ButtonInnerBorderColor1 := "0xFF3F444A" , MyButtonDesign1.Hover.ButtonInnerBorderColor2 := "0xFF24292D" , MyButtonDesign1.Hover.ButtonMainColor1 := "0xFF373C42" , MyButtonDesign1.Hover.ButtonMainColor2 := "0xFF373C42" , MyButtonDesign1.Hover.ButtonAddGlossy := "1" , MyButtonDesign1.Hover.GlossTopColor := "0x11FFFFFF" , MyButtonDesign1.Hover.GlossTopAccentColor := "05FFFFFF" , MyButtonDesign1.Hover.GlossBottomColor := "33000000"
+	;********************************
+	;Pressed
+	MyButtonDesign1.Pressed.W := 200 , MyButtonDesign1.Pressed.H := 65 , MyButtonDesign1.Pressed.Text := "Button" , MyButtonDesign1.Pressed.Font := "Arial" , MyButtonDesign1.Pressed.FontOptions := " Bold Center vCenter " , MyButtonDesign1.Pressed.FontSize := "12" , MyButtonDesign1.Pressed.H := "0x0002112F" , MyButtonDesign1.Pressed.TextBottomColor2 := "0x0002112F" , MyButtonDesign1.Pressed.TextTopColor1 := "0xFFFFFFFF" , MyButtonDesign1.Pressed.TextTopColor2 := "0xFFFFFFFF" , MyButtonDesign1.Pressed.TextOffsetX := "0" , MyButtonDesign1.Pressed.TextOffsetY := "0" , MyButtonDesign1.Pressed.TextOffsetW := "0" , MyButtonDesign1.Pressed.TextOffsetH := "0" , MyButtonDesign1.Pressed.BackgroundColor := "0xFF22262A" , MyButtonDesign1.Pressed.ButtonOuterBorderColor := "0xFF62666a" , MyButtonDesign1.Pressed.ButtonCenterBorderColor := "0xFF262B2F" , MyButtonDesign1.Pressed.ButtonInnerBorderColor1 := "0xFF151A20" , MyButtonDesign1.Pressed.ButtonInnerBorderColor2 := "0xFF151A20" , MyButtonDesign1.Pressed.ButtonMainColor1 := "0xFF12161a" , MyButtonDesign1.Pressed.ButtonMainColor2 := "0xFF33383E" , MyButtonDesign1.Pressed.ButtonAddGlossy := "0" , MyButtonDesign1.Pressed.GlossTopColor := "0x11FFFFFF" , MyButtonDesign1.Pressed.GlossTopAccentColor := "05FFFFFF" , MyButtonDesign1.Pressed.GlossBottomColor := "33000000"
+	;********************************
+	
+	return MyButtonDesign1
+}
