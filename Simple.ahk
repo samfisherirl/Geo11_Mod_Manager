@@ -20,10 +20,10 @@ delimiter = ","
 LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
 NextInstall := A_AppDataCommon "\GameslistGeo11\NextInstall.txt" 
 GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
-
+HelixLauncherBat := "\vrapplauncher.bat"
 Logdir := A_AppDataCommon "\GameslistGeo11"
 HelixLocal := A_AppDataCommon "\GameslistGeo11\HelixLocal.txt" 
-FileCreateDir, %Logdir%  
+FileCreateDir, %Logdir% 
 /* 
 Loop, read, %GamesUpdate%
 { 
@@ -61,9 +61,10 @@ delimiter := ","
 neutron := new NeutronWindow()
 neutron.Load("Simple.html")
 
-FileInstall, lib\bootstrap.min.css, \lib\bootstrap.min.css
-FileInstall, lib\bootstrap.min.js, \lib\bootstrap.min.js
-FileInstall, lib\jquery.min.js, \lib\jquery.min.js
+FileInstall, lib\bootstrap.min.css, lib\bootstrap.min.css
+FileInstall, lib\bootstrap.min.js, lib\bootstrap.min.js
+FileInstall, lib\jquery.min.js, lib\jquery.min.js 
+FileInstall, Untitled-1.png, Untitled-1.png
 neutron.Gui("+LabelNeutron")
 
 ; Use the Gui method to set a custom label prefix for GUI events. This code is
@@ -368,8 +369,7 @@ Ex4_Submit3(neutron, event)
             )
         }
     }
-    */  
-
+    */ 
 
     /*
     Loop, Read, %HTMLFile%
@@ -382,8 +382,8 @@ Ex4_Submit3(neutron, event)
 )
     }
     */ 
-            neutron.qs("#myH2data").innerHTML:=""
-            neutron.qs("#myH2data").innerHTML:=html
+    neutron.qs("#myH2data").innerHTML:=""
+    neutron.qs("#myH2data").innerHTML:=html
 
 /*
 Model:=CSV_ReadCell("data", 2,2)
@@ -458,7 +458,7 @@ BrowseButton(neutron, event)
     HTMLFile := A_AppDataCommon "\GameslistGeo11\HTMLfile.txt" 
     ; event.target will contain the HTML Element that fired the event.
     ; Show a message box with its inner text.
-    */  
+    */ 
     FileSelectFile, Selectgame, 32, , Select a game, Application (*.exe)
     if (Selectgame = "")
         MsgBox, You didn't select anything.
@@ -469,11 +469,11 @@ BrowseButton(neutron, event)
         if !FileExist(LogGames)
         {
             Games=
-(
+            (
 
-%Selectgame%, %Gameexe%
+            %Selectgame%, %Gameexe%
 
-)
+            )
             FileAppend,%Games%,%LogGames%
             GameError := 0 
         }
@@ -486,7 +486,7 @@ BrowseButton(neutron, event)
                 Gamename := LineRead[2]
                 If InStr(Gamename, Gamenameonly)
                 {
-                     
+
                     Msgbox, Error. %Gameexe% already has Geo11.
                     GameError := 1
                     break
@@ -530,43 +530,39 @@ BrowseButton(neutron, event)
                         GameError:=0
                 }
             }
-
-            If (GameError=0) 
+*/
+            If (GameError="0") 
             { 
-                msgbox, 2
-                FileDelete, %GamesUpdate%
-                FileAppend, %Gameexe%, %GamesUpdate%
                 HTMLPretext=
                 (
-                %Selectgame%,%Gameexe%,%Gamepath%
+%Selectgame%,%Gameexe%,%Gamepath%
                 )
+                FileDelete, %GamesUpdate%
+                FileAppend, %HTMLPretext%, %GamesUpdate%
                 GameError := 0
                 FileDelete, %HTMLFile%
                 FileAppend, %HTMLPretext%, %HTMLFile% 
-            }
-            else 
-                msgbox, placement9
-        }
-            */
+            } 
+ 
         }
     } 
     ;Gui Add, ComboBox, vcbx w200 vVersChoice, x32||x64
     ;Gui Add, ComboBox, vcbx w200 vVersChoice, x32||x64
     ;html := Gameexe 
- 
+
 }
 
 Warning(neutron, event)
 {
-Msgbox, For now, browse for your game first and then select your VR app location. For configure, that feature will be enabled later this weekend. 
-}
+    Msgbox, For now, browse for your game first and then select your VR app location. For configure, that feature will be enabled later this weekend. 
+    }
+
 SubmitGen(neutron, event)
 {
     Global
     event.preventDefault()
     ; Some events have a default action that needs to be prevented. A form will
     ; redirect the page by default, but we want to handle the form data ourself.
-
     GetAddresses()
     ; Use Neutron's GetFormData method to process the form data into a form that
     ; is easily accessed. Fields that have a 'name' attribute will be keyed by
@@ -576,6 +572,22 @@ SubmitGen(neutron, event)
         msgbox, Select a game
     else
     {
+        SplitPath, Selectgame, Gameexe, Gamepath
+ 
+        Loop, read, %GamesUpdate%
+        { 
+            Currentline := A_LoopReadLine
+            
+            if (Currentline="")
+            continue
+            else
+                break
+              }
+              
+         
+              LineRead := StrSplit(Currentline,delimiter)
+              Gameexe := LineRead[2]
+              Selectgame := LineRead[1]
         ; You can access all of the form fields by iterating over the FormData
         ; object. It will go through them in the order they appear in the HTML. 
 
@@ -584,26 +596,27 @@ SubmitGen(neutron, event)
         vrapp := formData.vrapp
         gamevers := formData.gamevers 
 
-        if FileExist(HelixLocal)
+         if FileExist(HelixLocal)
         {
             BinaryHelixFile := 1
             Loop, read, %HelixLocal%
             {
-                if (A_LoopReadLine="") 
+                CurrLine:=A_LoopReadLine
+                if (CurrLine="") 
                     continue
                 else
                 {
-                    HelixPath := % A_LoopReadLine
+                    HelixPath := CurrLine
                 }
             } 
+
         }
         Else
-            BinaryHelixFile := 0
-        If (HelixPath ="")
+            BinaryHelixFile := "0"
+        If (HelixPath="")
         {
-            BinaryHelixFile := 0
-        }
-
+            BinaryHelixFile := "0"
+        } 
         ; Show the output 
 
         if (gamevers="64x")
@@ -619,7 +632,8 @@ SubmitGen(neutron, event)
         ;arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"]
         FileCreateDir, %Gamepath%\geo 
         FileCreateDir, %Gamepath%\originaldx
-        ;arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"]
+        ;arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"] 
+
         array := ["d3d11.dll", "d3dcompiler_47.dll", "d3dx.ini", "d3dxdm.ini", "nvapi64.dll"]
 
         For index, value in array
@@ -627,7 +641,10 @@ SubmitGen(neutron, event)
             geo := % array[index] 
             FileCopy, %DllLocal%\%geo%, %Gamepath%\geo\%geo%, 1
         }
-        FileCopy, %A_ScriptDir%\leaveingamedir.exe, %Gamepath%\leaveingamedir.exe, 1
+        FileDelete, %Gamepath%\leaveingamedir.exe
+        FileDelete, %Gamepath%\pregame_move.bat
+        FileDelete, %Gamepath%\postgame_move.bat
+        FileCopy, %A_ScriptDir%\leaveingamedir.exe, %Gamepath%\leaveingamedir.exe, 1 
         FileCopy, %A_ScriptDir%\pregame_move.bat, %Gamepath%\pregame_move.bat, 1
         FileCopy, %A_ScriptDir%\postgame_move.bat, %Gamepath%\postgame_move.bat, 1
         FileCopyDir, %DllLocal%\ShaderFixes, %Gamepath%\ShaderFixes, 1
@@ -636,153 +653,207 @@ SubmitGen(neutron, event)
         Random, rand, 1, 12
         Localicon := A_ScriptDir "\ico\" rand ".ico" 
         TextforGamelog= 
-(
-    
-%Selectgame%,%Gameexe%
- 
-)
-        If (vrapp="Helix Vision" or vrapp="Virtual Desktop" or vrapp="Other") 
-        { 
-            if (BinaryHelixFile != 0)
-            {
-                msgbox, 4,, Is this the right path to %vrapp%? `n%HelixPath%
-                IfMsgBox No
-                Goto, KatangaGo1
-                IfMsgBox Yes
-                Goto, KatangaYes1
-            }
-            KatangaGo1:
-                msgboxstored=
-(
-Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tools\Katanga\katanga.exe
-)
-                Msgbox, Select Path to %vrapp%. %msgboxstored%
-                FileSelectFile, HelixPath, 32, , Select Kantagna Path, Application (*.exe)
-                if (Selectgame = "")
-                    MsgBox, You didn't select anything.
+        (
 
-            KatangaYes1:
-                FileDelete, %Logfile% ;  
-                tester1=
-(
+%Selectgame%,%Gameexe%
+
+        )
+        HV:="0"
+        VRL:="0"
+        If (vrapp = "Helix Vision") 
+        {
+            HV:="1"
+            VRL:="1"
+        }
+        if (vrapp= "Virtual Desktop" or vrapp="Other") 
+        {
+            HV:="0"
+            VRL:="1"
+            msgbox, This was designed to integrate with HelixVision, other VR apps won't have full resolution. 
+        }
+        if (HV="0" and VRL="0")
+        {
+            HV:="0"
+            VRL:="0"
+            msgbox, This was designed to integrate with HelixVision, other VR apps won't have full resolution. 
+        }
+        if (HV="0" and VRL="0")
+        {
+        Goto, NoDesktopApp
+        msgbox, This was designed to integrate with HelixVision, other VR apps won't have full resolution. 
+        }
+        
+        if (BinaryHelixFile=1)
+        {
+            msgbox, 4,, Is this the right path to %vrapp%? `n%HelixPath%
+            IfMsgBox No
+            Goto, KatangaGo1
+            IfMsgBox Yes
+            Goto, KatangaYes1
+        }
+        KatangaGo1:
+        if (HL=1) 
+          {  
+            msgboxstored=
+            (
+Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tools\Katanga\katanga.exe
+            )
+            }
+            Msgbox, Select Path to %vrapp%. %msgboxstored%
+            FileSelectFile, HelixPath, 32, , Select Kantagna Path, Application (*.exe)
+            if (Selectgame = "")
+                MsgBox, You didn't select anything.
+            KatangaYes1: 
+            FileDelete, %Logfile% ;  
+            tester1=
+            (
 %Selectgame%
 %HelixPath%
-)
-                FileAppend, %tester1%, %Logfile%
-                Filedelete, %HelixLocal%
-                FileAppend, %HelixPath%, %HelixLocal%
-            } 
-            Else
-                FileAppend, %Selectgame%, %Logfile% 
+            )
+            FileAppend, %tester1%, %Logfile% 
+                /*
 
-            FileAppend, %TextforGamelog%, %LogGames%
-            html:=LoadInstalled(html) 
- 
-            empty:=""  
-            neutron.qs("#myH2data").innerHTML:=empty
-            sleep, 50
-            neutron.qs("#myH2data").innerHTML:=html
-             
-            ShortcutMaker := A_Desktop "\" Gamenameonly " VR.lnk"
-            AHKLocal := Gamepath "\leaveingamedir.exe" 
-            FileCreateShortcut, %AHKLocal%, %ShortcutMaker%, %Gamepath%,,,%Localicon%
-            Msgbox, Geo11 Shortcut sent to desktop. 
-            Selectgame:=""
-            FileDelete, %GamesUpdate%
-            FileAppend, 
+                helix launcher batch for katanga
+
+            */
+            
+        If (HV=1)
+        {
+            filedelete, %A_ScriptDir%\%HelixLauncherBat%
+            Fileappend, 
             (
-%Gamepath%\%Gameexe%,%Gameexe%,%Gamenameonly%
-            ), %GamesUpdate%
+@echo off
+start "" "%HelixPath%" --game-path "%Selectgame%" --launch-type DX11Exe
+rem 
+rem 
+rem 
+echo: 
+echo: 
+echo: 
+echo: Loading Katanga and Moving Mountains
+echo:  
+rem 
+rem 
+rem 
+timeout /t 20
+rem 
+rem 
+rem 
+), %A_ScriptDir%\%HelixLauncherBat%
+            Filedelete, %HelixLocal%
+            FileAppend, %HelixPath%, %HelixLocal%
+        }
+        }  
+
+        FileCopy, %A_ScriptDir%\%HelixLauncherBat%, %Gamepath%\%HelixLauncherBat%, 1 
+        NoDesktopApp:
+        FileAppend, %TextforGamelog%, %LogGames%
+        html:=LoadInstalled(html) 
+
+        empty:="" 
+        neutron.qs("#myH2data").innerHTML:=empty
+        sleep, 50
+        neutron.qs("#myH2data").innerHTML:=html
+
+        ShortcutMaker := A_Desktop "\" Gamenameonly " VR.lnk"
+        AHKLocal := Gamepath "\leaveingamedir.exe" 
+        FileCreateShortcut, %AHKLocal%, %ShortcutMaker%, %Gamepath%,,,%Localicon%
+        Msgbox, Geo11 Shortcut sent to desktop. 
+        Selectgame:=""
+        FileDelete, %GamesUpdate%
+        FileAppend, 
+        (
+        %Gamepath%\%Gameexe%,%Gameexe%,%Gamenameonly%
+        ), %GamesUpdate%
 /*            html:=LoadInstalled(html)
             
             neutron.doc.getElementById("myH2").insertAdjacentHTML("beforebegin",html)
-            */
-        }
-    }
-
-    Storing(Stringer,Event)
-    { 
-        Loop, read, %LogGames%
-            if (A_LoopReadLine="") 
-            continue
-        else
-        {
-            Cell := StrSplit(A_LoopReadLine,delimiter)
-            If (Stored="")
-            {
-                Stored := Cell[2]
-                Stringer= 
-                (
-                <option value="%Stored%"> %Stored% </option>
-                ) 
-            }
-            else
-                Stored := Cell[2]
-            Stringer= 
-            (
-            %Stringer%
-<option value="%Stored%"> %Stringer% </option> 
-            )
-            return, %Stringer%
-        }
+        */
+        Selectgame:=""
     } 
 
-    Uninstaller(neutron, event)
-    { 
+Storing(Stringer,Event)
+{ 
+    Loop, read, %LogGames%
+        if (A_LoopReadLine="") 
+        continue
+    else
+    {
+        Cell := StrSplit(A_LoopReadLine,delimiter)
+        If (Stored="")
+        {
+            Stored := Cell[2]
+            Stringer= 
+            (
+            <option value="%Stored%"> %Stored% </option>
+            ) 
+        }
+        else
+            Stored := Cell[2]
+        Stringer= 
+        (
+        %Stringer%
+        <option value="%Stored%"> %Stringer% </option> 
+        )
+        return, %Stringer%
+    }
+} 
 
-        Global
-        event.preventDefault()
-        ; Some events have a default action that needs to be prevented. A form will
-        ; redirect the page by default, but we want to handle the form data ourself.
+Uninstaller(neutron, event)
+{ 
 
-        GetAddresses()
-        ; Use Neutron's GetFormData method to process the form data into a form that
-        ; is easily accessed. Fields that have a 'name' attribute will be keyed by
-        ; that, or if they don't they'll be keyed by their 'id' attribute. 
-        formData := neutron.GetFormData(event.target)
-        for name, value in formData
-		StoredGet:=value
-        ; You can access all of the form fields by iterating over the FormData
-        ; object. It will go through them in the order they appear in the HTML.  
-        ; You can also get field values by name directly. Use object dot notation
-        ; with the field name/id.   
+    Global
+    event.preventDefault()
+    ; Some events have a default action that needs to be prevented. A form will
+    ; redirect the page by default, but we want to handle the form data ourself.
+
+    GetAddresses()
+    ; Use Neutron's GetFormData method to process the form data into a form that
+    ; is easily accessed. Fields that have a 'name' attribute will be keyed by
+    ; that, or if they don't they'll be keyed by their 'id' attribute. 
+    formData := neutron.GetFormData(event.target)
+    for name, value in formData
+        StoredGet:=value
+    ; You can access all of the form fields by iterating over the FormData
+    ; object. It will go through them in the order they appear in the HTML.  
+    ; You can also get field values by name directly. Use object dot notation
+    ; with the field name/id.   
         /*
         html= 
         (
         <option value="fuckyourself"> fuckyourself </option>
         )
-        */
-        Msgbox, 4,, Uninstall Geo11 for %StoredGet%?
-        IfMsgBox Yes
-        {   
-            FSRemove(StoredGet)
-            html:=""
-            delimiter := ","
-            Loop, read, %LogGames%
-            { 
-                if (A_LoopReadLine="") 
-                    continue
-                else
-                {
-                    Cell := StrSplit(A_LoopReadLine,delimiter)
-                    curgame := Cell[2]
-                    html=
-(
-<option value="%curgame%" id="myH2" name="game">%curgame%</option> 
+    */
+    Msgbox, 4,, Uninstall Geo11 for %StoredGet%?
+    IfMsgBox Yes
+    { 
+        FSRemove(StoredGet)
+        html:=""
+        delimiter := ","
+        Loop, read, %LogGames%
+        { 
+            if (A_LoopReadLine="") 
+                continue
+            else
+            {
+                Cell := StrSplit(A_LoopReadLine,delimiter)
+                curgame := Cell[2]
+                html=
+                (
+                <option value="%curgame%" id="myH2" name="game">%curgame%</option> 
 
-%html%
-)
-                }
-            } 
-            
-           /*
-            Loop, read, %LogGames%
+                %html%
+                )
+            }            
+        } 
+
+            Loop, read, %GamesUpdate%
             {
                 Currentline := A_LoopReadLine
                 If InStr(Currentline, StoredGet)
                 {
                     LineRead := StrSplit(Currentline,delimiter)
-                    GameLocation := LineRead[2]
+                    GameLocation := LineRead[1]
                     SplitPath, GameLocation, OutFileName, OutDir, OutExtension, OutNameNoExt, OutDrive
                     Filedelete, %OutDir%\geo\*.dll
                     Filedelete, %OutDir%\geo\*.ini
@@ -790,6 +861,7 @@ Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tool
                     Filedelete, %OutDir%\pregame*.bat
                     Filedelete, %OutDir%\postgame*.bat
                     Filedelete, %OutDir%\VRLaun*.exe
+                    Filedelete, %OutDir%\vrapplauncher.bat
                     ;FileAppend %A_LoopReadLine%`n
                     ;FileMove, %GamesUpdate%, %LogGames%, 1
                     LineNumber := A_Index - 1
@@ -798,14 +870,14 @@ Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tool
                 else 
                     Continue
             }
-            */ 
-            Msgbox, Success `nThe UI will update when you restart. 
-            Goto, Beginning
-        } 
-        Else
-            Goto, Nevermind
+        */ 
+        Msgbox, Success `nThe UI will update when you restart. 
+        Goto, Beginning
+    } 
+    Else
+        Goto, Nevermind
 
-        Beginning:
+    Beginning:
         /*
         html:=""
         LoadInstalled()
@@ -818,20 +890,20 @@ Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tool
         neutron.doc.getElementById("myH2data").insertAdjacentHTML("afterbegin",html)
         ;neutron.doc.getElementById("myH2data").insertAdjacentHTML("afterbegin",html)
         */
-     Nevermind:
-        }  
+    Nevermind:
+    } 
 
-        SetLocations()
-        {
-            ColumnNr := [1]
-            delimiter := ","
+    SetLocations()
+    {
+        ColumnNr := [1]
+        delimiter := ","
 
-            LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
-            NextInstall := A_AppDataCommon "\GameslistGeo11\NextInstall.txt" 
-            GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
+        LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
+        NextInstall := A_AppDataCommon "\GameslistGeo11\NextInstall.txt" 
+        GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.txt" 
 
-            Logdir := A_AppDataCommon "\GameslistGeo11"
-            HelixLocal := A_AppDataCommon "\GameslistGeo11\HelixLocal.txt" 
-            HTMLFile := A_AppDataCommon "\GameslistGeo11\HTMLfile.txt" 
-        }
+        Logdir := A_AppDataCommon "\GameslistGeo11"
+        HelixLocal := A_AppDataCommon "\GameslistGeo11\HelixLocal.txt" 
+        HTMLFile := A_AppDataCommon "\GameslistGeo11\HTMLfile.txt" 
+    }
 

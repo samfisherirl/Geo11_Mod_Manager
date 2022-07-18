@@ -274,10 +274,9 @@
         <!-- Main content area -->
         <!-- Main content area -->
         <div class="container">
-            <h1><img src="lib\Untitled-1.png" width="527" height="60" alt=""/></h1>
+            <h1><img src="Untitled-1.png" width="527" height="60" alt=""/></h1>
             <p>
-                This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder in the game's directory.
-                Ensuring the game's original files stay intact.</p>
+                This app will load Geo11 files, and Katanga from HelixVision, without harming the game's files.</p>
             <p>It creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to
                 "/originaldx" and load geo11 dxd11 files. Creating a VR specific launcher/shortcut. On game close, the
                 files
@@ -285,32 +284,35 @@
             <p>
                 This is a 3rd party mod loader, I am not affiliated with the Geo11 team. Just a fan. </p>
             <!-- Example #1 -->
-            <h2 onclick="">Browse for New Game or <a href="#myH2data">Manage Existing Games</a></h2>
+            <h2 onclick="">Browse for Game or <a href="#myH2data">Manage Existing Games</a></h2>
             <p></p>
             <p>
                 Select Game Location and version. 'Generate' will push the Geo11 files to a folder in the game's
                 directory and a
-                Geo11 desktop shortcut.</p>
-            </p>
+                Geo11 desktop shortcut.</p> 
+		
+		
+		
+		
             <form onsubmit="ahk.SubmitGen(event)">
                 <!--ahk.SubmitGen(event)-->
                 <div class="row">
                     <div class="w-50">
-                        <label>Desktop 3D Display Application</label>
+                        <label>Desktop 3D Display Application:</label>
                         <!--321eagle-->
                         <select size="1" id="vrapp">
-                            <option value="Helix Vision">Helix Vision</option>
-                            <option value="Virtual Desktop">Virtual Desktop</option>
-                            <option value="None">None</option>
-                            <option value="Other">Other</option>
+                            <option value="Helix Vision" name="vrapps" id="Helix Vision">Helix Vision</option>
+                            <option value="Virtual Desktop" name="vrapps" id="Virtual Desktop">Virtual Desktop</option>
+                            <option value="None" name="vrapps" id="None">None</option>
+                            <option value="Other" name="vrapps" id="Other">Other</option>
                         </select>
                     </div>
                     <div class="w-50">
-                        <label>Desktop 3D Display Application</label>
+                        <label>Binary Version for game:</label>
                         <!--321eagle-->
                         <select size="1" id="gamevers">
-                            <option value="32x">32x</option>
-                            <option value="64x">64x</option>
+                            <option value="64x" name="gamevers">64x</option>
+                            <option value="32x" name="gamevers">32x</option>
                         </select>
                     </div>
                     <script src="pgia/lib/pgia.js"></script>
@@ -321,7 +323,7 @@
                     <button class="w-50" onclick="ahk.Warning(event)">Browse for VR App</button>
                 </div>
                 <p></p>
-                <button type="submit">Submit</button>
+                <button type="submit">Generate VR Shortcut</button>
                 <p></p>
             </form>
             <form onsubmit="ahk.Uninstaller(event)" id="myh2form"><fieldset>
@@ -332,8 +334,8 @@
                         <!--set to form and -->
                         <!--set submit to uninstall button-->
                         <!--321eagle-->
-                        <!--321eagle-->
-                        <select id="myH2data" size="5">
+                        <!--321eagle--> 
+                        <select id="myH2data" size="9">
                             <option value="None" id="myH2" name="filler"></option>
                             <!--321eagle-->
                         <!--321eagle-->
@@ -346,15 +348,19 @@
                     </div>
                     <div class="w-50">
                         <label for="this">Options </label>
+                        <button style="width:100%"  onclick="ahk.Warning(event)">Update All</button>
+                        <p></p>
+                        
                         <button style="width:100%"  onclick="ahk.Warning(event)">Configure</button>
                         <p></p>
+                        
                         <button type="submit" style="width:100%" >Uninstall</button>
                         <!--321eagle-->
                     </div>
                     <script src="pgia/lib/pgia.js"></script>
                 </div> </fieldset>
             </form>  <p></p> <br><br><br><br><br><br><br><br><br>
-    <h1>Update feature coming soon. Credit to <a href="http://helixmod.blogspot.com/2022/06/announcing-new-geo-11-3d-driver.html">Geo11 Helix team.</a></h1>
+    <h2>Update feature coming soon. Credit to <a href="http://helixmod.blogspot.com/2022/06/announcing-new-geo-11-3d-driver.html">Geo11 Helix team.</a></h2>
     </div>
     <!-- /container -->
     <!-- /container -->

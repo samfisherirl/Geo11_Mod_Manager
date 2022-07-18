@@ -12,14 +12,30 @@ SplitPath, OutputVar, Gameexe, Gamepath, Gameextenstion, Gamenameonly
 arraygeo := ["d3d11.geo", "d3dcompiler_47.geo", "d3dx.geo", "d3dxdm.geo", "nvapi64.geo"]
 arrayorig := ["d3d11.orig", "d3dcompiler_47.orig", "d3dx.orig", "d3dxdm.orig", "nvapi64.orig"]
 arraydll := ["d3d11.dll", "d3dcompiler_47.dll", "d3dx.ini", "d3dxdm.ini", "nvapi64.dll"]
-BeforeLaunch(arraygeo, arrayorig, arraydll) 
-sleep, 1000 
-If (Helix != "")
-{
-Run %Helix%,%Helixpath%
-Sleep, 1000
-}
+BeforeLaunch(arraygeo, arrayorig, arraydll)
+sleep, 1000
+
+HelixLauncherBat := Gamepath "\" "vrapplauncher.bat"
+
+sleep, 1000
 Run %Gameexe%, A_ScriptDir
+sleep, 15000
+if WinExist("ahk_exe" Gameexe)
+{
+        Run %HelixLauncherBat%, A_ScriptDir
+}
+else
+{
+        Sleep, 5000
+        Run %HelixLauncherBat%, A_ScriptDir
+}
+
+sleep, 4000
+WinActivate, ahk_exe %Gameexe%
+sleep, 4000
+WinActivate, ahk_exe %Gameexe%
+sleep, 4000
+WinActivate, ahk_exe %Gameexe%
 Loop, 10
 {
         ; CHECK FOR GAME LAUNCH CORRECTLY 1
@@ -35,7 +51,7 @@ Loop, 10
         }
 }
 if (Exister="1")
-{ 
+{
         Loop
         {
                 if !WinExist("ahk_exe" Gameexe)
@@ -49,14 +65,14 @@ if (Exister="1")
                         Sleep, 1000
         }
 }
-else 
+else
 {
         OnMessage(0x44, "OnMsgBox")
         MsgBox 0x84, %Gameexe% never launched, Should the VR launcher continue to wait for %Gameexe%? (App can be closed in system tray)
                 OnMessage(0x44, "")
 
         IfMsgBox Yes, {
-                Sleep, 20000
+                Sleep, 100000
                 WinWaitClose, ahk_exe Gameexe
                 AfterLaunch(arraygeo, arrayorig, arraydll)
                 exitapp
