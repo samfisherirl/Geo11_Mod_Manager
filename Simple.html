@@ -78,7 +78,7 @@
         /* ** Window Client Area ** */
         .main {
             /* Some settings for everything in the client area */
-            font-size: 9pt;
+            font-size: 7pt;
             padding: 1em;
             overflow: auto;
             background-color: rgb(21, 21, 21);
@@ -125,15 +125,16 @@
         input[type=number],
         input[type=password],
         select {
-			color:white;
+            color: white;
             width: 100%;
             padding: 0.75em;
             margin-bottom: 1em;
             border: 1px solid silver;
             border-radius: 0.35em;
             box-sizing: border-box;
-			background-color: black;
+            background-color: black;
         }
+
         select:hover {
             border: 1px solid rgb(38, 255, 9);
         }
@@ -147,9 +148,8 @@
 
         button {
             width: 100%;
-            background: rgb(21,233,7);
-            background: linear-gradient(90deg, rgb(25, 67, 22) 0%, rgba(59,139,85,1) 18%, rgba(65,161,91,1) 61%,rgb(42, 76, 45) 100%);
-            
+            background: rgb(21, 233, 7);
+            background: linear-gradient(90deg, rgb(25, 67, 22) 0%, rgba(59, 139, 85, 1) 18%, rgba(65, 161, 91, 1) 61%, rgb(42, 76, 45) 100%);
             color: rgb(255, 255, 255);
             padding: 14px 20px;
             margin-bottom: 1em;
@@ -157,22 +157,21 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-weight:bolder;
+            font-weight: bolder;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             border: 1px solid rgb(0, 0, 0);
         }
+
         button:hover {
             background: radial-gradient(circle, rgb(71, 165, 66) 0%, rgb(36, 188, 84) 35%, rgb(68, 152, 94) 85%, rgb(77, 166, 82) 100%);
-
-            /*background-color:#265322;*/
-            transition:0.1s;
+            /* background-color:#265322; */
+            transition: 0.1s;
             box-shadow: rgba(31, 255, 42, 0.751) 0 1px 50px;
-            color:rgb(255, 255, 255);
-            outline-color:yellow;
-             border:yellow;
-             border: 1px solid rgb(38, 255, 9);
+            color: rgb(255, 255, 255);
+            outline-color: yellow;
+            border: yellow;
+            border: 1px solid rgb(38, 255, 9);
         }
-
 
         input[type=submit]:hover {
             background-color: #96d599;
@@ -243,11 +242,12 @@
 
 <body>
     <!-- Title Bar -->
-    <header><span class="title-bar" onmousedown="neutron.DragTitleBar()">Mod Manager for Geo11</span><span
-            class="title-btn" onclick="neutron.Minimize()">0</span><span class='title-btn title-btn-maximize'
-            onclick='neutron.Maximize()'>1</span><span class='title-btn title-btn-restore'
-            onclick='neutron.Maximize()'>2</span><span class="title-btn title-btn-close"
-            onclick="neutron.Close()">r</span>
+    <header>
+        <span class="title-bar" onmousedown="neutron.DragTitleBar()">Mod Manager for Geo11</span>
+        <span class="title-btn" onclick="neutron.Minimize()">0</span>
+        <span class='title-btn title-btn-maximize' onclick='neutron.Maximize()'>1</span>
+        <span class='title-btn title-btn-restore' onclick='neutron.Maximize()'>2</span>
+        <span class="title-btn title-btn-close" onclick="neutron.Close()">r</span>
     </header>
     <!-- Main content area -->
     <!-- Main content area -->
@@ -274,7 +274,7 @@
         <!-- Main content area -->
         <!-- Main content area -->
         <div class="container">
-            <h1><img src="Untitled-1.png" width="527" height="60" alt=""/></h1>
+            <h1> <img src="Untitled-1.png" width="567" height="60" alt="" /></h1>
             <p>
                 This app will load Geo11 files, and Katanga from HelixVision, without harming the game's files.</p>
             <p>It creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to
@@ -289,11 +289,7 @@
             <p>
                 Select Game Location and version. 'Generate' will push the Geo11 files to a folder in the game's
                 directory and a
-                Geo11 desktop shortcut.</p> 
-		
-		
-		
-		
+                Geo11 desktop shortcut.</p>
             <form onsubmit="ahk.SubmitGen(event)">
                 <!--ahk.SubmitGen(event)-->
                 <div class="row">
@@ -319,57 +315,68 @@
                 </div>
                 <p></p>
                 <div class="row">
-                    <button class="w-50" onclick="ahk.BrowseButton(event)">Browse For Game</button>
-                    <button class="w-50" onclick="ahk.Warning(event)">Browse for VR App</button>
+                    <button class="w-50" type="button" onclick="ahk.BrowseButton(event)">Browse For Game</button>
+                    <button class="w-50" type="button" onclick="ahk.Warning(event)">Browse for VR App</button>
                 </div>
                 <p></p>
                 <button type="submit">Generate VR Shortcut</button>
                 <p></p>
             </form>
-            <form onsubmit="ahk.Uninstaller(event)" id="myh2form"><fieldset>
-                <div class="row">
-                    <div class="w-50">
-                        <label for="myh2form">Current Installs</label>
-                        <!--321eagle-->
-                        <!--set to form and -->
-                        <!--set submit to uninstall button-->
-                        <!--321eagle-->
-                        <!--321eagle--> 
-                        <select id="myH2data" size="9">
-                            <option value="None" id="myH2" name="filler"></option>
+            <form onsubmit="ahk.Uninstaller(event)" id="myh2form">
+                <fieldset>
+                    <div class="row">
+                        <div class="w-50">
+                            <label for="myh2form">Current Installs</label>
                             <!--321eagle-->
-                        <!--321eagle-->
-                        <!--321eagle-->
-                        <!--321eagle-->
-                        <!--321eagle-->
-                        <!--321eagle-->
-                        <!--321eagle-->
-                        </select>
+                            <!--set to form and -->
+                            <!--set submit to uninstall button-->
+                            <!--321eagle-->
+                            <!--321eagle-->
+                            <select id="myH2data" size="9">
+                                <option value="None" id="myH2" name="filler"></option>
+                                <!--321eagle-->
+                                <!--321eagle-->
+                                <!--321eagle-->
+                                <!--321eagle-->
+                                <!--321eagle-->
+                                <!--321eagle-->
+                                <!--321eagle-->
+                            </select>
+                        </div>
+                        <div class="w-50">
+                            <label for="this">Options </label>
+                            <button style="width:100%" type="button" onclick="ahk.Warning(event)">Update All</button>
+                            <p></p>
+                            <button style="width:100%"  onclick="ahk.Configure(event)">Configure</button>
+                            <p></p>
+                            <button type="submit" style="width:100%">Uninstall</button>
+                            <!--321eagle-->
+                        </div>
+                        <script src="pgia/lib/pgia.js"></script>
                     </div>
-                    <div class="w-50">
-                        <label for="this">Options </label>
-                        <button style="width:100%"  onclick="ahk.Warning(event)">Update All</button>
-                        <p></p>
-                        
-                        <button style="width:100%"  onclick="ahk.Warning(event)">Configure</button>
-                        <p></p>
-                        
-                        <button type="submit" style="width:100%" >Uninstall</button>
-                        <!--321eagle-->
-                    </div>
-                    <script src="pgia/lib/pgia.js"></script>
-                </div> </fieldset>
-            </form>  <p></p> <br><br><br><br><br><br><br><br><br>
-    <h2>Update feature coming soon. Credit to <a href="http://helixmod.blogspot.com/2022/06/announcing-new-geo-11-3d-driver.html">Geo11 Helix team.</a></h2>
-    </div>
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /container -->
-    <!-- /main -->
+                </fieldset>
+            </form>
+            <p></p> <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h2>Update feature coming soon. Credit to <a
+                    href="http://helixmod.blogspot.com/2022/06/announcing-new-geo-11-3d-driver.html">Geo11 Helix
+                    team.</a></h2>
+        </div>
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /container -->
+        <!-- /main -->

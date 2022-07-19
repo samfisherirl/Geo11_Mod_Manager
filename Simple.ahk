@@ -10,7 +10,7 @@ SetBatchLines -1
 #Include %A_ScriptDir%\lib\Neutron.ahk
 #Include %A_ScriptDir%\lib\tf.ahk 
 #Include %A_ScriptDir%\lib\csv.ahk 
-#Include %A_ScriptDir%\lib\browse.ahk 
+#Include %A_ScriptDir%\lib\browse.ahk   
 
 HTMLFile := A_AppDataCommon "\GameslistGeo11\HTMLfile.txt" 
 ; Create a new NeutronWindow and navigate to our HTML page 
@@ -63,8 +63,8 @@ neutron.Load("Simple.html")
 
 FileInstall, lib\bootstrap.min.css, lib\bootstrap.min.css
 FileInstall, lib\bootstrap.min.js, lib\bootstrap.min.js
-FileInstall, lib\jquery.min.js, lib\jquery.min.js 
-FileInstall, Untitled-1.png, Untitled-1.png
+FileInstall, lib\jquery.min.js, lib\jquery.min.js  
+FileInstall, Untitled-1.png, Untitled-1.png 
 neutron.Gui("+LabelNeutron")
 
 ; Use the Gui method to set a custom label prefix for GUI events. This code is
@@ -471,9 +471,9 @@ BrowseButton(neutron, event)
             Games=
             (
 
-            %Selectgame%, %Gameexe%
+%Selectgame%, %Gameexe%
 
-            )
+)
             FileAppend,%Games%,%LogGames%
             GameError := 0 
         }
@@ -536,7 +536,7 @@ BrowseButton(neutron, event)
                 HTMLPretext=
                 (
 %Selectgame%,%Gameexe%,%Gamepath%
-                )
+)
                 FileDelete, %GamesUpdate%
                 FileAppend, %HTMLPretext%, %GamesUpdate%
                 GameError := 0
@@ -657,7 +657,7 @@ SubmitGen(neutron, event)
 
 %Selectgame%,%Gameexe%
 
-        )
+)
         HV:="0"
         VRL:="0"
         If (vrapp = "Helix Vision") 
@@ -697,7 +697,7 @@ SubmitGen(neutron, event)
             msgboxstored=
             (
 Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tools\Katanga\katanga.exe
-            )
+)
             }
             Msgbox, Select Path to %vrapp%. %msgboxstored%
             FileSelectFile, HelixPath, 32, , Select Kantagna Path, Application (*.exe)
@@ -709,7 +709,7 @@ Usually stored in C:\Program Files (x86)\Steam\steamapps\common\HelixVision\Tool
             (
 %Selectgame%
 %HelixPath%
-            )
+)
             FileAppend, %tester1%, %Logfile% 
                 /*
 
@@ -771,7 +771,7 @@ rem
         */
         Selectgame:=""
     } 
-
+/*  
 Storing(Stringer,Event)
 { 
     Loop, read, %LogGames%
@@ -792,12 +792,49 @@ Storing(Stringer,Event)
             Stored := Cell[2]
         Stringer= 
         (
-        %Stringer%
-        <option value="%Stored%"> %Stringer% </option> 
+%Stringer%
+<option value="%Stored%"> %Stringer% </option> 
         )
         return, %Stringer%
     }
 } 
+
+*/
+
+Configure(neutron, event)
+{ 
+    Global 
+    ; Some events have a default action that needs to be prevented. A form will
+    ; redirect the page by default, but we want to handle the form data ourself.
+
+    event.preventDefault()
+    GetAddresses()
+    ; Use Neutron's GetFormData method to process the form data into a form that
+    ; is easily accessed. Fields that have a 'name' attribute will be keyed by
+    ; that, or if they don't they'll be keyed by their 'id' attribute. 
+    
+    msgboxer := neutron.qs("#myH2").innerText 
+    msgbox, %msgboxer%  
+        Loop, Read, %LogGames%
+        { 
+            word_array := StrSplit(A_LoopReadLine, delimiter)  
+            string:=word_array[1]
+             if instr(string,msgboxer)
+                 pathconfig:=A_LoopReadLine 
+             if (string="")
+                 continue
+             else
+             { 
+             }
+        }   
+        Filedelete, %NextInstall%
+        Fileappend, %pathconfig%, %NextInstall%  
+        Template := A_ScriptDir "\" "Template.ahk"
+        Run, %Template%, A_ScriptDir 
+    }
+
+
+
 
 Uninstaller(neutron, event)
 { 
@@ -840,9 +877,9 @@ Uninstaller(neutron, event)
                 curgame := Cell[2]
                 html=
                 (
-                <option value="%curgame%" id="myH2" name="game">%curgame%</option> 
+<option value="%curgame%" id="myH2" name="game">%curgame%</option> 
 
-                %html%
+%html%
                 )
             }            
         } 
