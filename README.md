@@ -1,6 +1,6 @@
 # Geo11_Mod_Manager 
 
-Update -  Katanga launcher for seamless gaming. https://streamable.com/kov060
+Update -  works with Katanga launcher for seamless gaming. https://streamable.com/kov060
 
 This is designed as support for 3dfix, right now geo11 requires manual loading and unloading for 2d games. I saw an opportunity to help the community in a small way, and maybe bolster the geo11 team's efforts on their great release.
 
