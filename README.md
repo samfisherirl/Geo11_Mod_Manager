@@ -2,7 +2,7 @@
 
 Update -  works with Katanga launcher. https://streamable.com/kov060
 
-[download here](https://github.com/samfisherirl/Geo11_Mod_Manager/releases) 
+[Download here.](https://github.com/samfisherirl/Geo11_Mod_Manager/releases) 
 
 This is designed as support for 3dfix, right now geo11 requires manual loading and unloading for 2d games. I saw an opportunity to help the community in a small way, and maybe bolster the geo11 team's efforts on their great release.
 
