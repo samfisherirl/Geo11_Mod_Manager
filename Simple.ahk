@@ -812,14 +812,16 @@ Configure(neutron, event)
     ; Use Neutron's GetFormData method to process the form data into a form that
     ; is easily accessed. Fields that have a 'name' attribute will be keyed by
     ; that, or if they don't they'll be keyed by their 'id' attribute. 
-    
-    msgboxer := neutron.qs("#myH2").innerText 
-    msgbox, %msgboxer%  
+    ;var x = document.getElementById("#myH2data").options.selectedIndex  
+    msgboxer := neutron.qs("#myH2data").options.selectedIndex  
+    y := neutron.qs("#myH2data").options
+    x:=y[msgboxer].text
+    msgbox,  %x%
         Loop, Read, %LogGames%
         { 
             word_array := StrSplit(A_LoopReadLine, delimiter)  
             string:=word_array[1]
-             if instr(string,msgboxer)
+             if instr(string,x)
                  pathconfig:=A_LoopReadLine 
              if (string="")
                  continue
@@ -829,7 +831,7 @@ Configure(neutron, event)
         }   
         Filedelete, %NextInstall%
         Fileappend, %pathconfig%, %NextInstall%  
-        Template := A_ScriptDir "\" "Template.ahk"
+        Template := A_ScriptDir "\" "configure.exe"
         Run, %Template%, A_ScriptDir 
     }
 
