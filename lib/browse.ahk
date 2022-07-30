@@ -14,56 +14,18 @@ GetAddresses()
     delimiter := "," 
     return
 }
-
+ProcessExist(Name){
+	Process,Exist,%Name%
+	return Errorlevel
+        }
+        
 FSRemove(StoredGet)
 {
     Global
-    LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
+    LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt"  
     loopstore:=""
     Loop, Read, %LogGames%
     { 
-        ; Parses a comma-separated string.
-
-        ; Colors := "red,green,blue"
-
-        LineNumber := A_Index
-        ;Colors := "red,green,blue"
-        Loop, parse, A_LoopReadLine, `,
-        {
-            if (A_Index=1)
-            {
-                If InStr(A_LoopField,StoredGet)
-                {
-                    remover=
-(
-%A_LoopField%
-)
-continue
-                }
-
-                If InStr(A_LoopField,"")
-                    continue
-                else
-                { 
-                    john:=1
-                }
-                if (john=1)
-                {
-                    loopstore= 
-                    (
-%A_LoopReadLine% 
-
-%loopstore%
-
-)
-
-                }
-            }
-        }
-    }
-
-/* 
-
         word_array := StrSplit(A_LoopReadLine, delimiter) 
         string:=word_array[1]
         if instr(string,StoredGet)
@@ -80,70 +42,82 @@ continue
 
 )
         }
-    } 
-            */
-    Templog:= A_ScriptDir "\loggame1.txt"
+    }  
+    Templog:= A_ScriptDir "\loggame.txt"
     Filedelete, %Templog% 
     Fileappend, %loopstore%, %Templog% 
     Filemove, %Templog%, %LogGames%, 1
-    Filedelete, %Templog% 
-    Fileappend, %remover%, %Templog% 
     Filedelete, %GamesUpdate% 
-    Filemove, %Templog%, %GamesUpdate%, 1
-        } 
+    Fileappend, %loopstore%, %GamesUpdate% 
+}
 
-    Readfile()
+
+
+LoadInstalled(html)
+{
+    global 
+    delimiter:=","
+    html:=""
+    Logger:=[]
+    Loop, read, %LogGames% 
     {
-        GamesUpdate := A_AppDataCommon "\GameslistGeo11\GamesUpdate.csv" 
-        CSV_Load(GamesUpdate,"csv", ",")
-        Cols:=CSV_TotalCols("csv") 
-        Loop, % Cols
+        word_array := StrSplit(A_LoopReadLine, delimiter) 
+        string:=word_array[2] 
+        if (string!="")
         {
-            reader := CSV_ReadCell("csv",1,A_Index)
-            totaller.= CSV_ReadCell("csv",1,A_Index) 
-        } 
+        html=
+        (
+<option value="%string%" id="myH2" name="game">%string%</option> 
+
+%html%
+        )
+        Gamesarray:=Logger[A_Index] 
     }
-    LoadInstalled(html)
-    {
-        global 
-        delimiter:=","
-        html:=""
-        Logger:=[]
-        Loop, read, %LogGames% 
-        {
-            word_array := StrSplit(A_LoopReadLine, delimiter) 
-            string:=word_array[2] 
-            if (string!="")
+    }
+ 
+    Filedelete, loggame.txt 
+    FileAppend, %html%, loggame.txt 
+    FileMove, loggame.txt, %HTMLFile%, 1 
+    return html
+}
+
+
+            GuiWarning()
             {
-                html=
-                (
-                <option value="%string%" id="myH2" name="game">%string%</option> 
+                displayer=
+        (
+        Your folder should look`n
+        like this.  If it does not,`n
+        this will not function right.`n
+        It requires both D3D11 files `n
+        and ShaderFixes. `n
+        )
+        
+        Gui Add, Picture, x168 y-16 w298 h248, %A_ScriptDir%\lib\picture for gui.PNG
+        Gui Add, Text, x8 y0 w120 h110 +0x200,%displayer%
+        Gui Add, Button, gClose x32 y160 w80 h23, Close
+        
+        Gui Show, w379 h226, Window
+        Return
+        
+        Close:
+        GuiEscape:
+        GuiClose:
+            ExitApp
+        }
+            LooperHtml(looper)
+            {
+                global
+                line:=""
+                Loop, Read, %HTMLFile% ; read file line by line
+                    if !instr(A_LoopReadLine,Gameexe)
+                {
+                    line .= A_LoopReadLine 
+                }
+                FileAppend, %line%, %HTMLFile1% 
+                FileMove, %HTMLFile1%, %HTMLFile%, 1
 
-                %html%
-                )
-                Gamesarray:=Logger[A_Index] 
             }
-        }
-
-        Filedelete, loggame.txt 
-        FileAppend, %html%, loggame.txt 
-        FileMove, loggame.txt, %HTMLFile%, 1 
-        return html
-    }
-
-    LooperHtml(looper)
-    {
-        global
-        line:=""
-        Loop, Read, %HTMLFile% ; read file line by line
-            if !instr(A_LoopReadLine,Gameexe)
-        {
-            line .= A_LoopReadLine 
-        }
-        FileAppend, %line%, %HTMLFile1% 
-        FileMove, %HTMLFile1%, %HTMLFile%, 1
-
-    }
 
     LoopGameFile()
     {
@@ -158,7 +132,84 @@ continue
                 CSV_DeleteRow("data", Row)
         } 
     }
+    HelixDoer(HelixBatPath,HelixPath,Selectgame,HelixLocal)
+    {
+        global
+        filedelete, %HelixBatPath%
+        Fileappend, 
+        (
+    @echo off
+    start "" "%HelixPath%" --game-path "%Selectgame%" --launch-type DX11Exe
+    rem 
+    rem 
+    rem 
+    echo: 
+    echo: 
+    echo: 
+    echo: Loading Katanga and Moving Mountains
+    echo: 
+    rem 
+    rem 
+    rem 
+    timeout /t 10
+    rem 
+    rem 
+    rem 
+    ), %HelixBatPath%
+            Filedelete, %HelixLocal%
+            FileAppend, %HelixPath%, %HelixLocal%
+    }
+
+    VRSCDo(HelixBatPath,HelixPath,Selectgame,HelixLocal)
+    {
+        filedelete, %HelixBatPath%
+        Fileappend, 
+        (
+@echo off
+start "" "%Logdir%\vr-screen-cap.exe"
+rem 
+rem 
+rem 
+echo: 
+echo: 
+echo: 
+echo: Loading Artum's VR Screen Cap and Moving Mountains
+echo: 
+rem 
+rem 
+rem 
+timeout /t 10
+rem 
+rem 
+rem 
+), %HelixBatPath%
+
+
+    }
+
+
+
 /*
+
+    CustomShaderFun(SomePath) 
+    {
+        global
+        Loop, Read, %CustomShaderLog%
+        {
+            ShaderPather:=A_LoopReadLine
+            Break
+        }
+        FileDelete, %CustomShaderLog%
+        Loop, Files, %SomePath%\*.*, R  ;mayyyyyyyyyyyyyyyyyy not work
+        {
+            shaderlines=
+        (
+%A_LoopFileName%
+
+)
+        FileAppend, %shaderlines%, %CustomShaderLog%
+        }
+    }
 BROWSE_One()
 {
 

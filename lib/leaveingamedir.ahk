@@ -29,7 +29,7 @@ HelixLauncherBat := Gamepath "\" "vrapplauncher.bat"
 
 sleep, 1000
 Run %OutputVar%, A_ScriptDir
-sleep, 15000
+sleep, 10000
 if WinExist("ahk_exe" Gameexe)
 {
         Run %HelixLauncherBat%, A_ScriptDir
