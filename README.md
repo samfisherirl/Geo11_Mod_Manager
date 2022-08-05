@@ -2,6 +2,9 @@
 
 Update -  works with Katanga launcher. https://streamable.com/kov060
 
+All credit to Artum for his vr screen cap - https://github.com/artumino/VRScreenCap 
+All credit to  davegl1234 & Bo3b for geo11 - https://www.mtbs3d.com/phpbb/viewtopic.php?t=26264
+
 [Download here.](https://github.com/samfisherirl/Geo11_Mod_Manager/releases) 
 
 This is designed as support for 3dfix, right now geo11 requires manual loading and unloading for 2d games. I saw an opportunity to help the community in a small way, and maybe bolster the geo11 team's efforts on their great release.
