@@ -13,5 +13,5 @@ This app will take the Geo11 files such as dxd11.dll and move to a "geo" folder 
 It creates a desktop shortcut, when clicked, it will move the game's original "dxd11.dll" files to "/originaldx" and load geo11 dxd11 files. . Creating a VR specific launcher/shortcut.
 
 https://streamable.com/3wo845
-![image](https://user-images.githubusercontent.com/98753696/182964564-c3f381d9-2f31-4aee-bfa4-3f63d3ba7efc.png)
+![image](https://user-images.githubusercontent.com/98753696/183057544-76999dab-5ea4-4e50-8810-076f0c6471ea.png)
 ![image](https://user-images.githubusercontent.com/98753696/180579200-d9114398-d552-459c-923c-b9315ecf7a17.png)
