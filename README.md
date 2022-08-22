@@ -1,5 +1,7 @@
 # Geo11_Mod_Manager 
 
+not maintained atm where I feel comfortable sharing releases. 
+
 Update -  works with Katanga launcher. https://streamable.com/kov060
 
 All credit to Artum for his vr screen cap - https://github.com/artumino/VRScreenCap 
