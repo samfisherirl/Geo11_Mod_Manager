@@ -15,23 +15,33 @@ GetAddresses()
     return
 }
 ProcessExist(Name){
-	Process,Exist,%Name%
-	return Errorlevel
-        }
-        
+    Process,Exist,%Name%
+    return Errorlevel
+}
+
 FSRemove(StoredGet)
 {
     Global
-    LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt"  
+    LogGames := A_AppDataCommon "\GameslistGeo11\Gamename.txt" 
     loopstore:=""
     Loop, Read, %LogGames%
     { 
         word_array := StrSplit(A_LoopReadLine, delimiter) 
         string:=word_array[1]
-        if instr(string,StoredGet)
-            continue
         if (string="")
             continue
+        if instr(string,StoredGet)
+        {
+            removethis:=string
+            continue
+        }
+        if (loopstore="")
+        {
+            loopstore= 
+(
+%A_LoopReadLine% 
+)
+        }
         else
         {
             loopstore= 
@@ -39,10 +49,9 @@ FSRemove(StoredGet)
 %A_LoopReadLine% 
 
 %loopstore%
-
-)
+            )
         }
-    }  
+    } 
     Templog:= A_ScriptDir "\loggame.txt"
     Filedelete, %Templog% 
     Fileappend, %loopstore%, %Templog% 
@@ -50,8 +59,6 @@ FSRemove(StoredGet)
     Filedelete, %GamesUpdate% 
     Fileappend, %loopstore%, %GamesUpdate% 
 }
-
-
 
 LoadInstalled(html)
 {
@@ -65,99 +72,98 @@ LoadInstalled(html)
         string:=word_array[2] 
         if (string!="")
         {
-        html=
-        (
+            html=
+            (
 <option value="%string%" id="myH2" name="game">%string%</option> 
 
 %html%
-        )
-        Gamesarray:=Logger[A_Index] 
+            )
+            Gamesarray:=Logger[A_Index] 
+        }
     }
-    }
- 
+
     Filedelete, loggame.txt 
     FileAppend, %html%, loggame.txt 
     FileMove, loggame.txt, %HTMLFile%, 1 
     return html
 }
 
+GuiWarning()
+{
+    displayer=
+    (
+Your folder should look`n
+like this. If it does not,`n
+    this will not function right.`n
+It requires both D3D11 files `n
+and ShaderFixes. `n
+    )
 
-            GuiWarning()
-            {
-                displayer=
-        (
-        Your folder should look`n
-        like this.  If it does not,`n
-        this will not function right.`n
-        It requires both D3D11 files `n
-        and ShaderFixes. `n
-        )
-        
-        Gui Add, Picture, x168 y-16 w298 h248, %A_ScriptDir%\lib\picture for gui.PNG
-        Gui Add, Text, x8 y0 w120 h110 +0x200,%displayer%
-        Gui Add, Button, gClose x32 y160 w80 h23, Close
-        
-        Gui Show, w379 h226, Window
-        Return
-        
-        Close:
-        GuiEscape:
-        GuiClose:
-            ExitApp
-        }
-            LooperHtml(looper)
-            {
-                global
-                line:=""
-                Loop, Read, %HTMLFile% ; read file line by line
-                    if !instr(A_LoopReadLine,Gameexe)
-                {
-                    line .= A_LoopReadLine 
-                }
-                FileAppend, %line%, %HTMLFile1% 
-                FileMove, %HTMLFile1%, %HTMLFile%, 1
+    Gui Add, Picture, x168 y-16 w298 h248, %A_ScriptDir%\lib\picture for gui.PNG
+    Gui Add, Text, x8 y0 w120 h110 +0x200,%displayer%
+    Gui Add, Button, gClose x32 y160 w80 h23, Close
 
-            }
+    Gui Show, w379 h226, Window
+    Return
 
-    LoopGameFile()
+    Close:
+    GuiEscape:
+    GuiClose:
+    ExitApp
+}
+LooperHtml(looper)
+{
+    global
+    line:=""
+    Loop, Read, %HTMLFile% ; read file line by line
+        if !instr(A_LoopReadLine,Gameexe)
     {
-        Global
-        CSV_Load(LogGames, "data")
-        Rows:=CSV_TotalRows("data")
-        Loop, % Rows
-        {
-            Row:=A_Index
-            Rowdata:=CSV_ReadRow("data",Row) 
-            If Instr(Rowdata,StoredGet)
-                CSV_DeleteRow("data", Row)
-        } 
+        line .= A_LoopReadLine 
     }
-    HelixDoer(HelixBatPath,HelixPath,Selectgame,HelixLocal)
+    FileAppend, %line%, %HTMLFile1% 
+    FileMove, %HTMLFile1%, %HTMLFile%, 1
+
+}
+
+LoopGameFile()
+{
+    Global
+    CSV_Load(LogGames, "data")
+    Rows:=CSV_TotalRows("data")
+    Loop, % Rows
     {
-        global
-        filedelete, %HelixBatPath%
-        Fileappend, 
-        (
-    @echo off
-    start "" "%HelixPath%" --game-path "%Selectgame%" --launch-type DX11Exe
-    rem 
-    rem 
-    rem 
-    echo: 
-    echo: 
-    echo: 
-    echo: Loading Katanga and Moving Mountains
-    echo: 
-    rem 
-    rem 
-    rem 
-    timeout /t 10
-    rem 
-    rem 
-    rem 
-    ), %HelixBatPath%
-            Filedelete, %HelixLocal%
-            FileAppend, %HelixPath%, %HelixLocal%
+        Row:=A_Index
+        Rowdata:=CSV_ReadRow("data",Row) 
+        If Instr(Rowdata,StoredGet)
+            CSV_DeleteRow("data", Row)
+    } 
+}
+HelixDoer(HelixBatPath,HelixPath,Selectgame,HelixLocal)
+{
+    global
+    filedelete, %HelixBatPath%
+    Fileappend, 
+    (
+@echo off
+start "" "%HelixPath%" --game-path "%Selectgame%" --launch-type DX11Exe
+rem 
+rem 
+rem 
+echo: 
+echo: 
+echo: 
+echo: Loading Katanga and Moving Mountains
+echo: 
+rem 
+rem 
+rem 
+timeout /t 10
+rem 
+rem 
+rem 
+        ), %HelixBatPath%
+        Filedelete, %HelixLocal%
+        FileAppend, %HelixPath%, %HelixLocal%
     }
 
     VRSCDo(HelixBatPath,HelixPath,Selectgame,HelixLocal)
@@ -182,13 +188,32 @@ timeout /t 10
 rem 
 rem 
 rem 
-), %HelixBatPath%
-
+        ), %HelixBatPath%
 
     }
 
+Class OTA {
+    DeleteFiles(OutDir)
+    {
+        Batfiler:= OutDir "\1.bat"
+        FileDelete, %Batfiler%
+        FileAppend, 
+        (
+@Echo Off 
+del /q /f %OutDir%\geo\*.dll
+rmdir %OutDir%\ShaderCacheDM\
+rmdir %OutDir%\ShaderCache\
+rmdir %OutDir%\geo\
+del /q /f %OutDir%\pregame*.bat
+del /q /f %OutDir%\post*.bat
+del /q /f %OutDir%\leaveingamedir.exe
 
+Timeout /t 1
+        ), %Batfiler%
+        Run, %Batfiler%, %A_ScriptDir%, Min 
+            }
 
+}
 /*
 
     CustomShaderFun(SomePath) 

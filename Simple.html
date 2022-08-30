@@ -24,14 +24,13 @@
             padding: 0;
             font-family: sans-serif;
         }
-
+        
         body {
             display: flex;
             flex-direction: column;
         }
-
         /* ** Window Title ** */
-
+        
         header {
             width: 100%;
             display: flex;
@@ -40,14 +39,14 @@
             font-size: 9pt;
             color: azure;
         }
-
+        
         .title-bar {
             padding: 0.35em 0.5em;
             flex-grow: 1;
             color: rgb(194, 194, 194);
             border-bottom-width: thick;
         }
-
+        
         .title-btn {
             padding: 0.35em 1.0em;
             cursor: pointer;
@@ -56,29 +55,28 @@
             font-size: 11pt;
             color: rgb(226, 226, 226);
         }
-
+        
         body .title-btn-restore {
             display: none;
         }
-
+        
         body.neutron-maximized .title-btn-restore {
             display: block;
         }
-
+        
         body.neutron-maximized .title-btn-maximize {
             display: none;
         }
-
+        
         .title-btn:hover {
             background: rgba(0, 0, 0, .2);
         }
-
+        
         .title-btn-close:hover {
             background: #dc3545;
         }
-
         /* ** Window Client Area ** */
-
+        
         .main {
             /* Some settings for everything in the client area */
             font-size: 8pt;
@@ -88,43 +86,40 @@
             color-scheme: dark;
             color: azure;
         }
-
+        
         .container {
             /* Only render items in the center 600px of the client area */
             max-width: 600px;
             margin: auto;
         }
-
         /* ** Bootstrap Style Flexbox Utilities ** */
-
+        
         .row {
             /* A row is basically just a flexbox container */
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
+        
         .w-50 {
             /* Fill almost half the row, leaving a bit of margin */
             width: 48%;
         }
-
+        
         .w-100 {
             /* Fill the entire row */
             width: 100%;
         }
-
+        
         @media screen and (max-width: 500px) {
-
             /* When the window gets shrunk */
             .w-50 {
                 /* Reflow half-size elements to fill the entire row */
                 width: 100%;
             }
         }
-
         /* ** Generic Form Styling ** */
-
+        
         input[type=text],
         input[type=email],
         input[type=number],
@@ -139,18 +134,18 @@
             box-sizing: border-box;
             background-color: black;
         }
-
+        
         select:hover {
             border: 1px solid rgb(38, 255, 9);
         }
-
+        
         label {
             display: inline-block;
             margin-bottom: 1em;
             font-weight: bold;
             font-size: 12px;
         }
-
+        
         button.submit {
             width: 48%;
             background: rgba(227, 0, 219, 0.648);
@@ -166,7 +161,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             border: 1px solid rgb(0, 0, 0);
         }
-
+        
         button.two {
             width: 48%;
             background: rgb(21, 233, 7);
@@ -182,7 +177,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             border: 1px solid rgb(0, 0, 0);
         }
-
+        
         button:hover {
             background: radial-gradient(circle, rgb(71, 165, 66) 0%, rgb(36, 188, 84) 35%, rgb(68, 152, 94) 85%, rgb(77, 166, 82) 100%);
             /* background-color:#265322; */
@@ -193,7 +188,7 @@
             border: yellow;
             border: 1px solid rgb(38, 255, 9);
         }
-
+        
         .submit:hover {
             background: radial-gradient(circle, rgb(98, 0, 255) 0%, rgb(95, 27, 255) 35%, rgb(53, 0, 118) 85%, rgb(87, 19, 245) 100%);
             /* background-color:#265322; */
@@ -204,13 +199,12 @@
             border: yellow;
             border: 1px solid rgb(255, 0, 149);
         }
-
+        
         input[type=submit]:hover {
             background-color: #a32812;
         }
-
         /* https://stackoverflow.com/a/17406564 */
-
+        
         fieldset {
             margin-bottom: 1em;
             margin-top: 1.5em;
@@ -219,28 +213,27 @@
             padding-top: 1em;
             box-sizing: border-box;
         }
-
+        
         legend {
             background: white;
         }
-
+        
         fieldset>legend {
             float: left;
             margin-top: -1.5em;
         }
-
+        
         fieldset>legend+* {
             clear: both;
         }
-
         /* ** Giant Key Styling ** */
-
+        
         .keys {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
-
+        
         .keys>div {
             width: 100px;
             height: 100px;
@@ -252,19 +245,18 @@
             color: white;
             border-radius: 1rem;
         }
-
+        
         .keys>div.active {
             background: MediumSeaGreen;
         }
-
         /* ** Table Styling ** */
-
+        
         table {
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
         }
-
+        
         thead,
         tr:nth-child(even) {
             /* Color header and every other row */
@@ -277,11 +269,8 @@
 
 <body>
     <!-- Title Bar -->
-    <header> <span class="title-bar" onmousedown="neutron.DragTitleBar()">Mod Manager for Geo11</span> <span
-            class="title-btn" onclick="neutron.Minimize()">0</span> <span class='title-btn title-btn-maximize'
-            onclick='neutron.Maximize()'>1</span> <span class='title-btn title-btn-restore'
-            onclick='neutron.Maximize()'>2</span> <span class="title-btn title-btn-close"
-            onclick="neutron.Close()">r</span>
+    <header> <span class="title-bar" onmousedown="neutron.DragTitleBar()">Mod Manager for Geo11</span> <span class="title-btn" onclick="neutron.Minimize()">0</span> <span class='title-btn title-btn-maximize' onclick='neutron.Maximize()'>1</span> <span class='title-btn title-btn-restore'
+            onclick='neutron.Maximize()'>2</span> <span class="title-btn title-btn-close" onclick="neutron.Close()">r</span>
     </header>
     <!-- Main content area -->
     <!-- Main content area -->
@@ -309,27 +298,12 @@
         <!-- Main content area -->
         <div class="container">
             <h1> <img src="Untitled-1.png" width="567" height="60" alt="" /></h1>
-            <div class="row" style="width: 100%;">
-                <div class="col-md-6" style="width: 48%;">
-                    This app will load Geo11 files, without harming the game's files. The best display method is
-                    currently via VR Screen Cap by Artum.</p>
-                    <p>It creates a desktop shortcut, when clicked, it will move the game&apos;s original
-                        &quot;dxd11.dll&quot; files to &quot;/originaldx&quot; and load geo11 dxd11 files. Creating a VR
-                        specific launcher/shortcut. On game close, the files will return
-                    to original locations. 
-                </div>
-                <div class="col-md-6" style="width: 48%;"> This is a 3rd party mod loader, I am not affiliated with the Geo11 team. Just
-                    a fan.&nbsp;<br /><br />Select Game Location and version. &apos;Generate&apos; will push the Geo11
-                    files to a folder in the game&apos;s
-                    directory and a Geo11 desktop shortcut.</p> All credit goes to <a
-                    href="https://www.mtbs3d.com/phpbb/viewtopic.php?t=26264">davegl1234 & Bo3b&nbsp;</a>for GEO11 <br>and Artum for
-                <a href="https://github.com/artumino/VRScreenCap">VRScreenCap</a>
-                </div>
-            </div>
+			
+			
+            
             <p> </p>
             <!-- Example #1 -->
-            <h2 style="border-left-color: #FF0004; border-right-color: #FF0004; border-top-color: #FF0004; border-bottom: 5px solid #02F000;"
-                onclick=""></h2>
+            <h2 style="border-left-color: #FF0004; border-right-color: #FF0004; border-top-color: #FF0004; border-bottom: 5px solid #02F000;" onclick=""></h2>
             <p></p>
             <p></p>
             <form onsubmit="ahk.SubmitGen(event)">
@@ -420,9 +394,23 @@
                     </div>
                 </fieldset>
             </form>
-            <p></p> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-            <h2>Update feature coming soon. <br /> Credit to <a
-                    href="http://helixmod.blogspot.com/2022/06/announcing-new-geo-11-3d-driver.html">Geo11 Helix
+	
+	
+	<div class="row" style="width: 100%;">    <h2 style="width: 100%">Instructions and credits.  </a></h2><br />
+                <div class="col-md-6" style="width: 48%;">
+                    This app will load Geo11 files, without harming the game's files. The best display method is currently via VR Screen Cap by Artum.</p>
+                    <p>It creates a desktop shortcut, when clicked, it will move the game&apos;s original &quot;dxd11.dll&quot; files to &quot;/originaldx&quot; and load geo11 dxd11 files. Creating a VR specific launcher/shortcut. On game close, the files
+                        will return to original locations.
+                </div>
+                <div class="col-md-6" style="width: 48%;"> This is a 3rd party mod loader, I am not affiliated with the Geo11 team. Just a fan.&nbsp;<br /><br />Select Game Location and version. &apos;Generate&apos; will push the Geo11 files to a folder in the game&apos;s directory and a Geo11
+                    desktop shortcut.</p> All credit goes to <a href="https://www.mtbs3d.com/phpbb/viewtopic.php?t=26264">davegl1234 & Bo3b&nbsp;</a>for GEO11 <br>and Artum for
+                    <a href="https://github.com/artumino/VRScreenCap">VRScreenCap</a>
+                </div>
+            </div>
+	
+	
+            <p></p> <br /> <br /> <br /> <br /> <br />
+            <h2>Update feature coming soon. <br /> Credit to <a href="http://helixmod.blogspot.com/2022/06/announcing-new-geo-11-3d-driver.html">Geo11 Helix
                     team.</a></h2>
         </div>
         <!-- /container -->
