@@ -1,7 +1,5 @@
 # Geo11_Mod_Manager 
 
-not maintained atm where I feel comfortable sharing releases. 
-
 Update -  works with Katanga launcher. https://streamable.com/kov060
 
 All credit to Artum for his vr screen cap - https://github.com/artumino/VRScreenCap 
@@ -20,4 +18,3 @@ It creates a desktop shortcut, when clicked, it will move the game's original "d
 
 https://streamable.com/3wo845
  ![image](https://user-images.githubusercontent.com/98753696/187366004-54357a0e-dbc2-4be6-a14d-b46d06bfc190.png)
-
