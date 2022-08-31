@@ -11,9 +11,9 @@ Loop, Read, %Logfile%
     word_array := StrSplit(A_LoopReadLine, delimiter)  
     string:=word_array[1] 
     if (A_Index=1)
-        OutputVar:=string
-    if (A_Index=2)
-        Helix:=string
+    OutputVar:=string
+        if (A_Index=2)
+                Helix:=string
     
 }
  
