@@ -1,5 +1,7 @@
 # Geo11_Mod_Manager 
 
+This project is on pause while I work on a Steam library importer and just all around migration to coding python. This project was my first that really let me quit sales and move on to full time developement. I'll update with a python release under a system framework, until then, if it ain't got issues don't break it. Thanks everyone. 
+
 Update -  works with Katanga launcher. https://streamable.com/kov060
 
 All credit to Artum for his vr screen cap - https://github.com/artumino/VRScreenCap 
