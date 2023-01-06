@@ -1,5 +1,7 @@
 # Geo11_Mod_Manager 
 
+1/7/23  = > new release
+
 https://github.com/samfisherirl/VDF-Steam-Library-Parse-and-Validate
 
  ![ezgif-2-580347263f](https://user-images.githubusercontent.com/98753696/210883719-a4b411b6-8740-46a4-bb8e-c4259e7156be.gif)
