@@ -4,9 +4,9 @@
 
 https://github.com/samfisherirl/VDF-Steam-Library-Parse-and-Validate
 
- ![ezgif-2-580347263f](https://user-images.githubusercontent.com/98753696/210883719-a4b411b6-8740-46a4-bb8e-c4259e7156be.gif)
 
-
+![image](https://user-images.githubusercontent.com/98753696/211889864-aa63f2ad-6c87-4ca6-a830-5e1a3598c5c0.png)
+ 
 This project was on pause while I work on a Steam library importer and just all around migration to coding python. That has come to a close, and I'm working on a new release (v3) and that is in the test section of releases. Updates will come with a full v3 out expected before 1.30.22
 
 Update -  works with Katanga launcher. https://streamable.com/kov060
