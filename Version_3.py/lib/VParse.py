@@ -5,11 +5,11 @@ import sys
 import shutil
 import json
 import os.path
-import settings as S
+from lib import settings_test as S
 from lib import library_paths as LP 
 
-appinfo = S.Dir.checker('')
-directory = S.Dir.dirname('')
+appinfo = S.appinfo()
+directory = S.Dir.dirname()
 
 def verify_vdf_location(directory):
     # global appinfo, dirname 
@@ -135,7 +135,7 @@ def call_lib(lib, directory):
         print('\n\nno library found\n===>C:\\Program Files (x86)\\Steam\\config\\libraryfolders.vdf\n\nMove this file adjacent to this app and try again.')
         return False
     else:
-        library = LP.grab_paths(library)
+        library = LP.grab_paths()
     print(str(library))
     print(lib[9].path + lib[9].exe)
     return library
@@ -150,8 +150,8 @@ def path_validation(paths, lib):
             post = i.path + "\\" + i.exe
             x = path + post.replace('\\\\', '\\')
             if os.path.exists(x) and i.name not in dupe:
-                i.longpath = x + "\\" + i.exe
-                matched.append([i.name, i.exe, i.path, i.longpath])
+                i.longpath = x
+                matched.append([i.name, i.exe, i.path, i.longpath, i.id])
                 dupe.append(i.name)
     print('finished')
     print(str(matched))

@@ -2,21 +2,6 @@ import os
 import os.path
 from lib import reg_query as GetSteam
 import time
-from lib import locate_steam
-
-appinfos = []
-appinfos = locate_steam.main()
-appinfo = appinfos[0]
-steampath = appinfos[1]
-
-def appinfo():
-    appinfo = appinfos[0]
-    return appinfo
-
-def steamlib():
-    steampath = appinfos[1]
-    path = os.path.join(steampath, 'config\\libraryfolders.vdf')
-    return path
 
 #################################################
 # get steam paths from list of installs on reg
@@ -38,19 +23,19 @@ class Dir:
         
         pather = os.path.join(path, 'appcache\\appinfo.vdf')
         if os.path.exists(pather):
-                    return True, pather
+                    return True, pather, path
         else:
-            False, pather
+            False, pather, path
 
-def old_main():
+def main():
     
     list_of_steam_addys = GetSteam.main()
-    print(list_of_steam_addys)
     for i in list_of_steam_addys:
         try:
             ifexist = Dir.loop_addys(i.strip("steam.exe"))
             if ifexist[0]:  # if exist
-                appinfo = ifexist[1] # path return
+                appinfo = ifexist[1]
+                steam = ifexist[2] # path return
                 break
             else:
                 continue
@@ -60,9 +45,14 @@ def old_main():
     #directory = Dir.dirname()
     #appinfo = Dir.checker(appinfo)
 
-    return appinfo
- 
+    return appinfo, steam
 
 
+
+
+
+if __name__ == "__main__":
+    print(str(main()))
+    time.sleep(0.1)
 
     

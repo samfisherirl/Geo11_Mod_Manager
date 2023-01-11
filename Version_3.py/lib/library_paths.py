@@ -1,30 +1,23 @@
 import os 
 import time
-import settings as S
+import os.path
+from lib import settings_test as S
 
-appinfo = r'C:\Program Files (x86)\Steam\appcache\appinfo.vdf'
+steam = S.steamlib()
+dirname = S.Dir.dirname()
+Steam86 = os.path.join(steam, 'config\libraryfolders.vdf')
+library = steam
 
-dirname = S.Dir.dirname('')
-Steam86 = r'C:\Program Files (x86)\Steam\config\libraryfolders.vdf'
-Steam64 = r'C:\Program Files\Steam\config\libraryfolders.vdf'
-SteamNA = os.path.join(dirname, 'libraryfolders.vdf')
 
 class Libs:
 	def __init__(self, filename):
 		self.filename = filename
 		self.path = os.path.join(dirname, filename)	
 
-def test():
-	if exists(Steam86):
+def test(): 
 		return Steam86
-	elif exists(Steam64):
-		return Steam64
-	elif exists(SteamNA):
-		return SteamNA
-	else:
-		return False
 
-def read(library):
+def read():
 	with open(library, 'r+') as f:
 		lines = f.readlines()
 		ar = []
@@ -69,12 +62,12 @@ def check_path(directory):
 		return library
 	except:
 		print('\n\nno library found\n===>C:\\Program Files (x86)\\Steam\\config\\libraryfolders.vdf\n\nMove this file adjacent to this app and try again.')
-		time.sleep(10)
+		time.sleep(1)
 		return False
 
-def grab_paths(library):
+def grab_paths():
   
-	locations = read(library)
+	locations = read()
 	dirs = clean(locations)
 	print(dirs)
 	time.sleep(1)
