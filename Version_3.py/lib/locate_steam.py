@@ -23,9 +23,9 @@ class Dir:
         
         pather = os.path.join(path, 'appcache\\appinfo.vdf')
         if os.path.exists(pather):
-                    return True, pather, path
+            return True, pather, path
         else:
-            False, pather, path
+            return False, pather, path
 
 def main():
     
@@ -36,7 +36,7 @@ def main():
             if ifexist[0]:  # if exist
                 appinfo = ifexist[1]
                 steam = ifexist[2] # path return
-                break
+                return appinfo, steam 
             else:
                 continue
         except:
@@ -45,14 +45,15 @@ def main():
     #directory = Dir.dirname()
     #appinfo = Dir.checker(appinfo)
 
-    return appinfo, steam
 
 
 
 
 
 if __name__ == "__main__":
-    print(str(main()))
-    time.sleep(0.1)
-
+    try:
+        print(str(main()))
+        time.sleep(0.1)
+    except: 
+        print('\n\nlocate steam error.\n\ncontinuing...\n\n')
     

@@ -4,9 +4,10 @@ import os
 from peewee import *
 from lib import javascript_pywebview as js
 
- # This model uses the "people.db" database.
+# This model uses the "people.db" database.
 
-db = SqliteDatabase('games.db') 
+db = SqliteDatabase('games.db')
+
 
 class Game(Model):
     game = CharField()
@@ -14,11 +15,10 @@ class Game(Model):
     path = CharField()
     longpath = CharField()
     i_d = IntegerField()
-    
+
     class Meta:
         database = db
 
-    
 # try:
 #   print(Game.get(Game.i_d == '66').exe)
 #   print(Game.get(Game.i_d == '22').exe)

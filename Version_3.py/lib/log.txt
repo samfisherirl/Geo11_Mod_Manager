@@ -1,0 +1,913 @@
+
+
+DisplayName     : AutoHotkey 1.1.36.02
+InstallLocation : 
+
+DisplayName     : BlueStacks 5
+InstallLocation : 
+
+DisplayName     : Radzen 2.43.3
+InstallLocation : 
+
+DisplayName     : Cheat Engine 7.4
+InstallLocation : C:\Program Files\Cheat Engine 7.4\
+
+DisplayName     : 
+InstallLocation : 
+
+DisplayName     : Driver Easy 5.7.3
+InstallLocation : C:\Program Files\Easeware\DriverEasy\
+
+DisplayName     : Equalizer APO
+InstallLocation : 
+
+DisplayName     : Microsoft Azure Compute Emulator - v2.9.7
+InstallLocation : 
+
+DisplayName     : PremiumSoft Navicat Data Modeler 3.2
+InstallLocation : C:\Program Files\PremiumSoft\Navicat Data Modeler 3\
+
+DisplayName     : Notepad++ (64-bit x64)
+InstallLocation : 
+
+DisplayName     : Oculus
+InstallLocation : C:\Program Files\Oculus\
+
+DisplayName     : OneClickFirewall
+InstallLocation : 
+
+DisplayName     : Peace
+InstallLocation : 
+
+DisplayName     : Pinegrow Web Editor version 7.05 (64-bit)
+InstallLocation : C:\Program Files\Pinegrow Web Editor\
+
+DisplayName     : SAPIEN PowerShell Studio 2022
+InstallLocation : C:\Program Files\SAPIEN Technologies, Inc\PowerShell Studio 2022\
+
+DisplayName     : SAPIEN Updates
+InstallLocation : C:\Program Files\SAPIEN Technologies, Inc\SAPIEN Updates\
+
+DisplayName     : SAPIEN ScriptMerge 2022
+InstallLocation : C:\Program Files\SAPIEN Technologies, Inc\ScriptMerge 2022\
+
+DisplayName     : Spyder
+InstallLocation : C:\Program Files\Spyder
+
+DisplayName     : SQLiteStudio
+InstallLocation : C:\Program Files\SQLiteStudio
+
+DisplayName     : SteamVR
+InstallLocation : C:\Program Files (x86)\Steam\steamapps\common\SteamVR
+
+DisplayName     : Rocket League
+InstallLocation : F:\SteamLibrary\steamapps\common\rocketleague
+
+DisplayName     : Factorio
+InstallLocation : C:\Program Files (x86)\Steam\steamapps\common\Factorio
+
+DisplayName     : PUBG: BATTLEGROUNDS
+InstallLocation : D:\SteamLibrary\steamapps\common\PUBG
+
+DisplayName     : Valheim
+InstallLocation : D:\SteamLibrary\steamapps\common\Valheim
+
+DisplayName     : Sublime Text 3
+InstallLocation : C:\Program Files\Sublime Text 3\
+
+DisplayName     : TeamViewer
+InstallLocation : C:\Program Files\TeamViewer
+
+DisplayName     : Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40664
+InstallLocation : 
+
+DisplayName     : Microsoft Windows Desktop Targeting Pack - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Test Suite (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Workload.Emscripten.net7.Manifest (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Documentation (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Ref.android (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Azure Compute Emulator - v2.9.7
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Standard Library (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Host FX Resolver - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Ref.ios (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.ios-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Windows SDK DirectX x64 Remote
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Targeting Pack - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Web Deploy 4.0
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Build of OpenJDK with Hotspot 11.0.12+7 (x64)
+InstallLocation : C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\
+
+DisplayName     : Microsoft .NET Core SDK 2.2.207 (x64)
+InstallLocation : 
+
+DisplayName     : vs_devenx64vmsi
+InstallLocation : 
+
+DisplayName     : .NET Android Templates (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Ref.any (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Runtime.android (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 7.0.1 (x64_arm)
+InstallLocation : 
+
+DisplayName     : Virtual Desktop Service
+InstallLocation : C:\Program Files\Virtual Desktop\
+
+DisplayName     : Python 3.10.8 pip Bootstrap (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Resizetizer.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Android.Runtime.33.android-x86 (x64)
+InstallLocation : 
+
+DisplayName     : NordVPN
+InstallLocation : C:\Program Files\NordVPN\
+
+DisplayName     : Python 3.9.7 Core Interpreter (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : vs_minshellx64msi
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Ref.win (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Runtime.ios (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Runtime - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.maccatalyst-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Sdk.macOS.Manifest-7.0.100 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core 3.1 Templates 3.1.426 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Runtime.win (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-x86 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core AppHost Pack - 3.1.32 (x64_arm)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2022 X64 Debug Runtime - 14.34.31931
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.iossimulator-x86 (x64)
+InstallLocation : 
+
+DisplayName     : MPC-HC 1.9.24 (64-bit)
+InstallLocation : C:\Program Files\MPC-HC\
+
+DisplayName     : Application Verifier x64 External Package
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Core Interpreter (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Ref.android (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 3.1.32 Shared Framework (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Add to Path (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Ref.android (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Targeting Pack - 3.1.0 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Ref (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Executables (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-x86 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft SQL Server 2019 LocalDB 
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Runtime - 5.0.8 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.61030
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Ref.maccatalyst (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Server Speech Platform Runtime (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.AspNetCore.Components.WebView.Maui (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Windows Desktop Runtime - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Android.Sdk.Windows (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Utility Scripts (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft Command Line Utilities 15 for SQL Server
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Sdk.iOS.Manifest-7.0.100 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.ios-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.MacCatalyst.Runtime.maccatalyst-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Windows Desktop Runtime - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Standard Library (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Ref.any (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Development Libraries (64-bit debug)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.iossimulator-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 7.0.1 (x64_arm64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 6.0.12 (x64_arm64)
+InstallLocation : 
+
+DisplayName     : WYSIWYG Web Builder 17.1.0
+InstallLocation : C:\Program Files\WYSIWYG Web Builder 17\
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.maccatalyst-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core AppHost Pack - 3.1.32 (x64)
+InstallLocation : 
+
+DisplayName     : Logitech G HUB
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40664
+InstallLocation : 
+
+DisplayName     : IIS 10.0 Express
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Runtime.android (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Runtime.ios (x64)
+InstallLocation : 
+
+DisplayName     : vs_minshellinteropx64msi
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.iossimulator-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Runtime.ios-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 6.0.12 (x64_x86)
+InstallLocation : 
+
+DisplayName     : PeaZip 9.0.0 (WIN64)
+InstallLocation : C:\Program Files\PeaZip\
+
+DisplayName     : Microsoft.MacCatalyst.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Tcl/Tk Support (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft Windows Desktop Runtime - 5.0.8 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft System CLR Types for SQL Server 2019
+InstallLocation : 
+
+DisplayName     : Microsoft Windows Desktop Runtime - 3.1.32 (x64)
+InstallLocation : 
+
+DisplayName     : OpenXR-Toolkit
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.maccatalyst-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.iossimulator-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.MacCatalyst.Templates (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-arm (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Core Interpreter (64-bit debug)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Core Interpreter (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Runtime.any (x64)
+InstallLocation : 
+
+DisplayName     : X64 Debuggers And Tools
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Test Suite (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Host - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Toolset 3.1.426 (x64)
+InstallLocation : 
+
+DisplayName     : Windows App Certification Kit Native Components
+InstallLocation : 
+
+DisplayName     : NordUpdater
+InstallLocation : C:\Program Files\NordUpdater\
+
+DisplayName     : Python 3.9.7 Tcl/Tk Support (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual Studio Installer
+InstallLocation : "C:\Program Files (x86)\Microsoft Visual Studio\Installer"
+
+DisplayName     : Microsoft .NET Host FX Resolver - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 7.0.1 (x64_x86)
+InstallLocation : 
+
+DisplayName     : PowerShell Studio 2022
+InstallLocation : C:\Program Files\SAPIEN Technologies, Inc\PowerShell Studio 2022\
+
+DisplayName     : Microsoft Windows Desktop Targeting Pack - 3.1.0 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Runtime.win (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Host - 5.0.8 (x64)
+InstallLocation : 
+
+DisplayName     : VS JIT Debugger
+InstallLocation : 
+
+DisplayName     : icecap_collection_x64
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Executables (64-bit debug)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Ref.any (x64)
+InstallLocation : 
+
+DisplayName     : PowerShell 7-x64
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Runtime.win (x64)
+InstallLocation : 
+
+DisplayName     : Universal CRT Tools x64
+InstallLocation : 
+
+DisplayName     : Microsoft ODBC Driver 17 for SQL Server
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Targeting Pack - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Executables (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Runtime.MonoAOTCompiler.Task (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Runtime.maccatalyst (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Core Interpreter (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft Silverlight
+InstallLocation : c:\Program Files\Microsoft Silverlight\
+
+DisplayName     : Microsoft .NET Core Runtime - 2.2.8 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Host - 3.1.32 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.iossimulator-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Azure Authoring Tools - v2.9.7
+InstallLocation : 
+
+DisplayName     : vs_Graphics_Singletonx64
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Runtime.MonoTargets.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Runtime.iossimulator-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Toolset 7.0.101 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Development Libraries (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.ios-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Runtime.any (x64)
+InstallLocation : 
+
+DisplayName     : vs_communityx64msi
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Standard Library (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET 6.0 Templates 7.0.101 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 2.2.8 Shared Framework (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core AppHost Pack - 3.1.32 (x64_x86)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Standard Targeting Pack - 2.1.0 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Runtime - 3.1.32 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 7.0.1 Shared Framework (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Documentation (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET 7.0 Templates 7.0.101 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Standard Library (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Host - 2.2.8 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Host FX Resolver - 3.1.32 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Runtime.any (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Tcl/Tk Support (64-bit debug)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Sdk.Maui.Manifest-7.0.100 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Executables (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : NVIDIA Graphics Driver 528.02
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\Display.Driver.{D4CEFCE6-C75E-44D7-B74B-16713033775D}
+
+DisplayName     : NVIDIA GeForce Experience 3.26.0.160
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\Display.GFExperience.{953CE533-6A79-4BBC-8E41-C1F68BDE6E5F}
+
+DisplayName     : 
+InstallLocation : 
+
+DisplayName     : NVIDIA Optimus Update 39.4.0.0
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\Display.Optimus.{0E3E8685-D77E-4CC3-A68A-B866F6A9598D}
+
+DisplayName     : NVIDIA PhysX System Software 9.21.0713
+InstallLocation : C:\Program Files (x86)\NVIDIA Corporation\PhysX
+
+DisplayName     : NVIDIA Update 39.4.0.0
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\Display.Update.{2E22F5AA-122B-44A7-84B0-5A5BB2904E62}
+
+DisplayName     : NVIDIA FrameView SDK 1.3.8107.31782123
+InstallLocation : C:\Program Files\NVIDIA Corporation\FrameViewSDK
+
+DisplayName     : NVIDIA SHIELD Streaming
+InstallLocation : C:\Program Files\NVIDIA Corporation\NvStreamSrv
+
+DisplayName     : NVIDIA GPX Common OSS binaries (POCO, OpenSSL, libprotobuf)
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\GpxCommon.Oss.{3E7691F4-D214-40B8-9B38-4E33519FA36B}
+
+DisplayName     : NVIDIA HD Audio Driver 1.3.39.16
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\HDAudio.Driver.{16D58C68-173B-4C00-8695-82B46ED7F278}
+
+DisplayName     : NVIDIA Install Application
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\InstallerCore
+
+DisplayName     : NVIDIA Backend
+InstallLocation : C:\Program Files (x86)\NVIDIA Corporation\Update Core
+
+DisplayName     : NVIDIA Container
+InstallLocation : C:\Program Files\NVIDIA Corporation\NvContainer
+
+DisplayName     : NVIDIA TelemetryApi helper for NvContainer
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.ContainerTelemetryApiHelper.{3F3AAEF1-70AB-4057-8AA0-0454D88700DE}
+
+DisplayName     : NVIDIA LocalSystem Container
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.LocalSystem.{9F30F850-CF32-4164-90C2-6017CA96251A}
+
+DisplayName     : NVIDIA Message Bus for NvContainer
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.MessageBus.{258F7480-B10A-4828-A6EA-C4FE4D35A72B}
+
+DisplayName     : NVIDIA NVAPI Monitor plugin for NvContainer
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.NvapiMonitor.{81D58169-4587-4887-9068-68D53A0E4299}
+
+DisplayName     : NVIDIA NetworkService Container
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.ServiceUser.{346EDE46-A2A8-4294-B9C4-ED18A25B8641}
+
+DisplayName     : NVIDIA Session Container
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.Session.{F97A01E4-36A1-42EC-9E11-FEFD21FB4E42}
+
+DisplayName     : NVIDIA User Container
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvContainer.User.{BB29E46B-20F5-42AD-8933-45DF1EB34A3C}
+
+DisplayName     : NVIDIA NvModuleTracker
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvModuleTracker.Driver.{5F01BF14-8E02-4C94-840B-218A120D487C}
+
+DisplayName     : NVIDIA NodeJS
+InstallLocation : C:\Program Files (x86)\NVIDIA Corporation\NvNode
+
+DisplayName     : NVIDIA Watchdog Plugin for NvContainer
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvPlugin.Watchdog.{FBDA89A2-D585-445A-BE25-BA75F31C8999}
+
+DisplayName     : NVIDIA Telemetry Client
+InstallLocation : C:\Program Files\NVIDIA Corporation\NvTelemetry
+
+DisplayName     : NVIDIA Virtual Host Controller
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\NvVHCI.{D1657310-D58C-49CB-9AFE-64BBC6B31662}
+
+DisplayName     : Nvidia Share
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\OSC.{6322CA5C-BA1E-4D5C-BC01-B913D89434D0}
+
+DisplayName     : NVIDIA ShadowPlay 3.26.0.160
+InstallLocation : C:\Program Files\NVIDIA Corporation\ShadowPlay
+
+DisplayName     : NVIDIA SHIELD Wireless Controller Driver
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\ShieldWirelessController.{9F86F4DC-140A-4926-8E64-BDEAF21EBE07}
+
+DisplayName     : NVIDIA Update Core
+InstallLocation : C:\Program Files (x86)\NVIDIA Corporation\Update Core
+
+DisplayName     : NVIDIA Virtual Audio 4.45.0.0
+InstallLocation : C:\Program Files\NVIDIA Corporation\Installer2\VirtualAudio.Driver.{6C0F4F80-539D-46F5-AB6E-B8C485154C88}
+
+DisplayName     : Python 3.10.8 Standard Library (64-bit debug)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Runtime.iossimulator-x86 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Windows.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Development Libraries (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft Windows Desktop Targeting Pack - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Tcl/Tk Support (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Ref.win (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.iossimulator-x86 (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Utility Scripts (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Windows.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Graphics.Win2D.WinUI.Desktop (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Runtime.android (x64)
+InstallLocation : 
+
+DisplayName     : ScriptMerge 2022
+InstallLocation : C:\Program Files\SAPIEN Technologies, Inc\ScriptMerge 2022\
+
+DisplayName     : Microsoft.Maui.Controls.Runtime.ios (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Sdk.MacCatalyst.Manifest-7.0.100 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.maccatalyst-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : EA app
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Test Suite (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft Azure Libraries for .NET - v2.9
+InstallLocation : 
+
+DisplayName     : VS Script Debugging Common
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest (x64)
+InstallLocation : 
+
+DisplayName     : SAPIEN Updates
+InstallLocation : C:\Program Files\SAPIEN Technologies, Inc\SAPIEN Updates\
+
+DisplayName     : Microsoft.Android.Sdk.Windows (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Android.Ref.33 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET SDK 7.0.101 (x64) from Visual Studio
+InstallLocation : 
+
+DisplayName     : .NET MAUI Templates (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.61030
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.34.31931
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Controls.Ref.maccatalyst (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.android-x86 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET AppHost Pack - 6.0.12 (x64_arm)
+InstallLocation : 
+
+DisplayName     : Microsoft.MacCatalyst.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : UE4 Prerequisites (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Host FX Resolver - 5.0.8 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Sdk.tvOS.Manifest-7.0.100 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Runtime.maccatalyst (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Ref.ios (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Android.Runtime.33.android-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Workload.Emscripten.net6.Manifest (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Host - 6.0.12 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Ref.maccatalyst (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.10.8 Test Suite (64-bit debug)
+InstallLocation : 
+
+DisplayName     : .NET MAUI Templates (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Runtime.ios-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 6.0.12 Targeting Pack (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Graphics (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 7.0.1 Targeting Pack (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Test Suite (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft Visual C++ 2022 X64 Additional Runtime - 14.34.31931
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Runtime.MonoAOTCompiler.Task (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 6.0.12 Shared Framework (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Templates (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.MacCatalyst.Runtime.maccatalyst-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.iOS.Runtime.iossimulator-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-x86 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core Module V2 for IIS Express
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core AppHost Pack - 3.1.32 (x64_arm64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 pip Bootstrap (64-bit)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.ios-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Core.Ref.win (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Runtime - 7.0.1 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.MacCatalyst.Ref (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Runtime.maccatalyst (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.Android.Runtime.33.android-arm64 (x64)
+InstallLocation : 
+
+DisplayName     : IntelliTraceProfilerProxy
+InstallLocation : 
+
+DisplayName     : Microsoft.Maui.Essentials.Ref.ios (x64)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Tcl/Tk Support (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Python 3.9.7 Executables (64-bit symbols)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core Module for IIS Express
+InstallLocation : 
+
+DisplayName     : Microsoft.Android.Runtime.33.android-x64 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft .NET Core Host FX Resolver - 2.2.8 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NETCore.App.Runtime.Mono.android-arm (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Runtime.MonoTargets.Sdk (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft.NET.Sdk.Android.Manifest-7.0.100 (x64)
+InstallLocation : 
+
+DisplayName     : Microsoft ASP.NET Core 3.1.10 Targeting Pack (x64)
+InstallLocation : 
+
+DisplayName     : DiagnosticsHub_CollectionService
+InstallLocation : 
+
+
+

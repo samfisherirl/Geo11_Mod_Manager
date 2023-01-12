@@ -1,53 +1,47 @@
-from os.path import exists
-import os
-
-from peewee import *
 from lib import javascript_pywebview as js
 from sqlmodel import db, Game
+
 # This model uses the "people.db" database.
 
 # db = SqliteDatabase('games.db') 
-def connect():
-    db.connect()
-    db.create_tables([Game])
+
+db.connect()
+db.create_tables([Game])
+
 
 def add_game(game, exe, path, longpath, i_d):
     try:
         Game.create(game=game, exe=exe, path=path, longpath=longpath, i_d=i_d)
     except:
         pass
-    db.close()
 
 
 def loop_insert(lib):
-    db.connect()
+    for i in lib[1]:
+        add_game(str(i[0]), str(i[1]), str(i[1]), str(i[3]), str(i[4]))
 
-    for i in lib[0]:
-        add_game(i.name, i.exe, i.path, i.longpath, i.id)
-    db.close()
 
+def test():
+    print('testing\n')
+    gamers = Game.get(Game.id == '1').get()
+    print(gamers.path)
 
 
 def initial_retrieve():
-    db.connect()
     vals = ''
-    try:
-        for games in Game.select(): 
-            val = js.Import.javascript(str(games.game), str(games.exe), str(games.path), games.i_d)
-            vals = vals + val
-    except:
-        vals = False
+    for games in Game.select():
+        val = js.Import.javascript(str(games.game),
+                        str(games.exe), str(games.path), games.i_d)
+        vals = vals + val
     db.close()
     return vals
 
 
 def install(id):
-    db.connect()
     path = Game.get(Game.i_d == id).longpath
     print(path)
-    db.close()  
+    db.close()
 
-    
 # try:
 #   print(Game.get(Game.i_d == '66').exe)
 #   print(Game.get(Game.i_d == '22').exe)

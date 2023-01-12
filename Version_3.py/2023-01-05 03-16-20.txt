@@ -1,1 +1,0 @@
-i.name, i.exe, i.path, i.longpath
