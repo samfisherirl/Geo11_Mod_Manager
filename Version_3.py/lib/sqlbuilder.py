@@ -1,6 +1,6 @@
-from lib import javascript_pywebview as js
-from sqlmodel import db, Game
-
+from structured import javascriptpywebview as js
+from structured.sqlmodel import db, Game
+import os.path
 # This model uses the "people.db" database.
 
 # db = SqliteDatabase('games.db') 
@@ -11,7 +11,7 @@ db.create_tables([Game])
 
 def add_game(game, exe, path, longpath, i_d):
     try:
-        Game.create(game=game, exe=exe, path=path, longpath=longpath, i_d=i_d)
+        Game.create(game=game, exe=exe, path=path, longpath=longpath, i_d=i_d, installed=0)
     except:
         pass
 
@@ -37,10 +37,32 @@ def initial_retrieve():
     return vals
 
 
-def install(id):
-    path = Game.get(Game.i_d == id).longpath
-    print(path)
-    db.close()
+def get_game_details(ids):
+    current_game = Game.get(Game.i_d == ids)
+    
+    logger = "~\\Documents\\geo11.txt"
+    # log = os.path.expanduser(logger)
+
+    install_status = current_game.installed
+    if install_status == 1:
+        return 1
+
+    class Install:
+        longpath = current_game.longpath
+        id = ids
+        name = current_game.game
+        gamedir = os.path.dirname(longpath) 
+        bits = ''
+        log = os.path.expanduser(logger)
+        
+    install_game = Install()
+    current_game.install = 1
+    current_game.save()
+    print(current_game.install)
+
+    
+    return install_game
+
 
 # try:
 #   print(Game.get(Game.i_d == '66').exe)

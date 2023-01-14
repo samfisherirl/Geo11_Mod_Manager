@@ -2,7 +2,7 @@ from os.path import exists
 import os
 
 from peewee import *
-from lib import javascript_pywebview as js
+from structured import javascriptpywebview as js
 
 # This model uses the "people.db" database.
 
@@ -15,6 +15,7 @@ class Game(Model):
     path = CharField()
     longpath = CharField()
     i_d = IntegerField()
+    installed = IntegerField()
 
     class Meta:
         database = db

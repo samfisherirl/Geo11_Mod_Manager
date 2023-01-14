@@ -1,28 +1,26 @@
-from lib import VParse as V
+from structured import VParse as V
 import os.path
 import shutil
 import json
 import time
 import subprocess
-from lib import settings_test as S
+from structured import path 
+from structured import settingstest as S
 
 
+directory = path.rootfolder()
 appinfo = S.appinfo()
 print(appinfo)
 
-class main_location_return:
-    def pather():
-        directory = os.path.dirname(__file__)
-        return directory
     
-directory = S.Dir.dirname()
+directory = path.rootfolder()
 
 def main():
     # need to find proper global declaration of  
 
     time.sleep(0.2)
     # Calling the cmd4 function in the VParse.py file.
-    list = V.call_vdfp(directory)
+    list = V.call_vdfp()
     gamedic = V.parse_json(list)  # Parsing the list of games and their information.
 
     # Creating a list of objects.

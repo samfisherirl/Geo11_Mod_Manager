@@ -1,15 +1,23 @@
-import subprocess
-import codecs
+
 import os
 import sys
+from structured import path
 import shutil
 import json
 import os.path
-from lib import settings_test as S
-from lib import library_paths as LP 
+from structured import settingstest as S
+from structured import librarypaths as LP
+import utilities as U
+
+dir = path.rootfolder()
+
+from pathlib import Path
+
+base_dir = Path(__file__).parent.parent.parent
 
 appinfo = S.appinfo()
-directory = S.Dir.dirname()
+
+
 
 def verify_vdf_location(directory):
     # global appinfo, dirname 
@@ -29,15 +37,22 @@ def verify_vdf_location(directory):
             return False
 
 
-def call_vdfp(directory):
+def call_vdfp():
     # Joining the directory and the VDFP.exe file.
-    VDFexe = os.path.join(directory, 'VDFP.exe')
-    out = os.path.join(directory, 'output.json')
+    VDFexe = os.path.join(dir, 'VDFP.exe')
+    with open('appinfo.json', 'w') as f:
+        f.write(VDFexe)
+    out = os.path.join(dir, 'output.json')
+    cmds = [str(VDFexe), str(appinfo), '-p']
+    val = U.VDFP(cmds)
+    
+    #print(appinfo)
+    #result = subprocess.run([VDFexe, appinfo, '-p'], capture_output=True)  
 
-    result = subprocess.run([VDFexe, appinfo, '-p'], capture_output=True)  # , "--pretty", ">output.json"
     # It's converting the output of the command to a string.
-    val = str(result.stdout.strip(), encoding='utf-8')
-
+    # val = result
+    #with open('out.json', 'w') as f:
+    #    f.write(val)
     vals = json.loads(val)
     list = vals['datasets']
     return list
@@ -175,7 +190,7 @@ def writer(lib, directory):
         os.path.remove(log)
         os.path.remove(csv)
     except:
-        print("")
+        print("log4")
     with open(log, 'w', encoding='utf-8') as f:
         with open(csv, 'w', encoding='utf-8') as g:
             f.write('here are your matched paths, next update includes name. ')
