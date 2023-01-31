@@ -64,23 +64,4 @@ def get_game_details(ids):
     
     return install_game
 
-
-# try:
-#   print(Game.get(Game.i_d == '66').exe)
-#   print(Game.get(Game.i_d == '22').exe)
-#   print(Game.get(Game.i_d == '88').exe)
-#   print(Game.get(Game.i_d == '11').exe)
-# except:
-#   pass
-
-
-# try:
-#   print(Game.get(Game.i_d == '11').exe)
-# except:
-#   pass
-
-
-# try:
-#   print(Game.get(Game.i_d == '88').exe)
-# except:
-#   pass
+ 
