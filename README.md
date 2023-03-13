@@ -1,14 +1,10 @@
-# Geo11_Mod_Manager 
-
-1/7/23  = > new release
-
-https://github.com/samfisherirl/VDF-Steam-Library-Parse-and-Validate
 
 
-![image](https://user-images.githubusercontent.com/98753696/211889864-aa63f2ad-6c87-4ca6-a830-5e1a3598c5c0.png)
+
  
-#  GEO11 MOD MANAGER V3 
-
+#
+#GEO11 MOD MANAGER V3  
+#
 
 - this will auto-import most* steam games
 - the launcher will move all the geo11 files into the games directory
@@ -16,6 +12,8 @@ https://github.com/samfisherirl/VDF-Steam-Library-Parse-and-Validate
 - when the game closes, vrscreencap will close and the files will be removed from the dir for 2d play. 
 
 the big upgrade is automatic steam library importer which was a long process. this will be usable for other mods and is modular. ATM this is the only way to select a game. there are mislabeled tables, and its rough around teh edges, but functional. other libraries and custom game imports will be added. 
+
+![image](https://user-images.githubusercontent.com/98753696/211889864-aa63f2ad-6c87-4ca6-a830-5e1a3598c5c0.png)
 
 https://github.com/samfisherirl/Geo11_Mod_Manager/releases/download/v3/GEO11_MOD_MANAGER.v3.Test.7z
 
