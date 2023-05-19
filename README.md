@@ -2,8 +2,7 @@
 
 
  
-#
-#GEO11 MOD MANAGER V3  
+# GEO11 MOD MANAGER v2 (recommended)
 #
 
 - this will auto-import most* steam games
