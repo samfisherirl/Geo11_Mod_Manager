@@ -3,7 +3,6 @@
 
  
 # GEO11 MOD MANAGER v2 (recommended)
-#
 
 - Launch geo11_mm.exe from the folder of the same name
 - click the green arrow next to any game you'd like to setup geo11 on
@@ -41,6 +40,7 @@ It creates a desktop shortcut, when clicked, it will move the game's original "d
 https://streamable.com/3wo845
  ![image](https://user-images.githubusercontent.com/98753696/187366004-54357a0e-dbc2-4be6-a14d-b46d06bfc190.png)
 
+# GEO11 MOD MANAGER v3 (unfinished)
 
 - this will auto-import most* steam games
 - the launcher will move all the geo11 files into the games directory
