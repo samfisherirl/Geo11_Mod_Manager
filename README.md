@@ -5,17 +5,6 @@
 # GEO11 MOD MANAGER v2 (recommended)
 #
 
-- this will auto-import most* steam games
-- the launcher will move all the geo11 files into the games directory
-- launch the game, and launch @artum  vrscreencap, each step waiting for the previous to finish. 
-- when the game closes, vrscreencap will close and the files will be removed from the dir for 2d play. 
-
-the big upgrade is automatic steam library importer which was a long process. this will be usable for other mods and is modular. ATM this is the only way to select a game. there are mislabeled tables, and its rough around teh edges, but functional. other libraries and custom game imports will be added. 
-
-![image](https://user-images.githubusercontent.com/98753696/211889864-aa63f2ad-6c87-4ca6-a830-5e1a3598c5c0.png)
-
-https://github.com/samfisherirl/Geo11_Mod_Manager/releases/download/v3/GEO11_MOD_MANAGER.v3.Test.7z
-
 - Launch geo11_mm.exe from the folder of the same name
 - click the green arrow next to any game you'd like to setup geo11 on
 - sigcheck will confirm bits of 32 or 64 
@@ -51,3 +40,16 @@ It creates a desktop shortcut, when clicked, it will move the game's original "d
 
 https://streamable.com/3wo845
  ![image](https://user-images.githubusercontent.com/98753696/187366004-54357a0e-dbc2-4be6-a14d-b46d06bfc190.png)
+
+
+- this will auto-import most* steam games
+- the launcher will move all the geo11 files into the games directory
+- launch the game, and launch @artum  vrscreencap, each step waiting for the previous to finish. 
+- when the game closes, vrscreencap will close and the files will be removed from the dir for 2d play. 
+
+the big upgrade is automatic steam library importer which was a long process. this will be usable for other mods and is modular. ATM this is the only way to select a game. there are mislabeled tables, and its rough around teh edges, but functional. other libraries and custom game imports will be added. 
+
+![image](https://user-images.githubusercontent.com/98753696/211889864-aa63f2ad-6c87-4ca6-a830-5e1a3598c5c0.png)
+
+https://github.com/samfisherirl/Geo11_Mod_Manager/releases/download/v3/GEO11_MOD_MANAGER.v3.Test.7z
+
